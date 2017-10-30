@@ -6,7 +6,7 @@ using System;
 
 namespace DPA_Musicsheets.ViewModels
 {
-    public class MidiPlayerViewModel : ViewModelBase
+    class MidiPlayerViewModel : ViewModelBase
     {
         private FileHandler _fileHandler;
 
@@ -40,10 +40,10 @@ namespace DPA_Musicsheets.ViewModels
             };
 
             _fileHandler = fileHandler;
-            _fileHandler.MidiSequenceChanged += (src, args) =>
+            _fileHandler.SequenceChanged += (src, args) =>
             {
                 StopCommand.Execute(null);
-                _sequencer.Sequence = args.MidiSequence;
+                _sequencer.Sequence = args.PlayableSequence;
                 UpdateButtons();
             };
         }

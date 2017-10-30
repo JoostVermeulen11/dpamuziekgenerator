@@ -8,7 +8,7 @@
              d:DesignHeight="30" d:DesignWidth="300"
              DataContext="{Binding MidiPlayerViewModel, Source={StaticResource Locator}}">
     <StackPanel Orientation="Horizontal">
-        <Button Command="{Binding PlayCommand}" Width="75" Content="Play" Margin="5" />
+        <Button Command="{Binding PlayCommand}" Width="75" Content="Play" Margin="5"/>
         <Button Command="{Binding PauseCommand}" Width="75" Content="Pause" Margin="5"/>
         <Button Command="{Binding StopCommand}" Width="75" Content="Stop" Margin="5"/>
     </StackPanel>

@@ -2,9 +2,9 @@
 
 namespace DPA_Musicsheets.Managers
 {
-    public class MidiSequenceEventArgs
+    public class SequenceEventArgs
     {
-        public Sequence MidiSequence { get; set; }
+        public Sequence PlayableSequence { get; set; }
         public string Message { get; set; }
     }
 }

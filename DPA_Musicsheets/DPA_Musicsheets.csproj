@@ -103,13 +103,81 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Managers\MidiSequenceEventArgs.cs" />
+    <Compile Include="Adapter\ClefAdapter.cs" />
+    <Compile Include="Adapter\NootAdapter.cs" />
+    <Compile Include="Adapter\SequenceAdapter.cs" />
+    <Compile Include="classes\AbstractNote.cs" />
+    <Compile Include="classes\Clef.cs" />
+    <Compile Include="classes\EndOfTrack.cs" />
+    <Compile Include="classes\MaatStreep.cs" />
+    <Compile Include="classes\MusicSheet.cs" />
+    <Compile Include="classes\Note.cs" />
+    <Compile Include="classes\Repeater.cs" />
+    <Compile Include="classes\RustNote.cs" />
+    <Compile Include="classes\StaffDrawer.cs" />
+    <Compile Include="classes\Tempo.cs" />
+    <Compile Include="classes\TimeSignature.cs" />
+    <Compile Include="Commands\OpenFileCommand.cs" />
+    <Compile Include="Commands\SaveAsLilypondCommand.cs" />
+    <Compile Include="Commands\SaveAsPDFCommand.cs" />
+    <Compile Include="enums\ClefType.cs" />
+    <Compile Include="enums\GUIStateType.cs" />
+    <Compile Include="enums\MusicType.cs" />
+    <Compile Include="enums\NoteItem.cs" />
+    <Compile Include="enums\StateType.cs" />
+    <Compile Include="enums\TieType.cs" />
+    <Compile Include="Factories\ReaderFactory.cs" />
+    <Compile Include="Interfaces\ICommand.cs" />
+    <Compile Include="Interfaces\IExpression.cs" />
+    <Compile Include="Interfaces\IInputReader.cs" />
+    <Compile Include="Interfaces\IMusicSymbol.cs" />
+    <Compile Include="Interfaces\INoteObserver.cs" />
+    <Compile Include="Interfaces\IState.cs" />
+    <Compile Include="Interfaces\ITokenChecker.cs" />
+    <Compile Include="Interfaces\IVisitor.cs" />
+    <Compile Include="Lilypond\Interpreter\Context.cs" />
+    <Compile Include="Lilypond\Interpreter\ExpressionFactory.cs" />
+    <Compile Include="Lilypond\Interpreter\Expressions\ClefExpression.cs" />
+    <Compile Include="Lilypond\Interpreter\Expressions\EndblokExpression.cs" />
+    <Compile Include="Lilypond\Interpreter\Expressions\MaatExpression.cs" />
+    <Compile Include="Lilypond\Interpreter\Expressions\NoteExpression.cs" />
+    <Compile Include="Lilypond\Interpreter\Expressions\RelativeExpression.cs" />
+    <Compile Include="Lilypond\Interpreter\Expressions\RepeatExpression.cs" />
+    <Compile Include="Lilypond\Interpreter\Expressions\RustExpression.cs" />
+    <Compile Include="Lilypond\Interpreter\Expressions\TempoExpressioncs.cs" />
+    <Compile Include="Lilypond\Interpreter\Expressions\TimeSignatureExpression.cs" />
+    <Compile Include="Lilypond\Interpreter\LilypondInterpreter.cs" />
+    <Compile Include="Lilypond\LilypondFileReader.cs" />
+    <Compile Include="Lilypond\LilypondReader.cs" />
+    <Compile Include="enums\TokenType.cs" />
+    <Compile Include="Lilypond\Tokenizer\checkers\NoteChecker.cs" />
+    <Compile Include="Lilypond\Tokenizer\checkers\NumberChecker.cs" />
+    <Compile Include="Lilypond\Tokenizer\checkers\RustChecker.cs" />
+    <Compile Include="Lilypond\Tokenizer\checkers\TempoChecker.cs" />
+    <Compile Include="Lilypond\Tokenizer\checkers\TimeSignatureChecker.cs" />
+    <Compile Include="Lilypond\Tokenizer\LilypondTokenizer.cs" />
+    <Compile Include="Lilypond\Tokenizer\Token.cs" />
+    <Compile Include="Managers\SequenceEventArgs.cs" />
+    <Compile Include="Managers\TextEventArgs.cs" />
     <Compile Include="Managers\WPFStaffsEventArgs.cs" />
-    <Compile Include="Managers\LilypondEventArgs.cs" />
     <Compile Include="Messages\CurrentStateMessage.cs" />
     <Compile Include="Managers\FileHandler.cs" />
+    <Compile Include="MIDI\Context.cs" />
+    <Compile Include="MIDI\MidiAdapter.cs" />
+    <Compile Include="MIDI\MidiFileReader.cs" />
+    <Compile Include="MIDI\MIDIMessageHandler\ChannelHandler.cs" />
+    <Compile Include="MIDI\MIDIMessageHandler\ChannelHandlerFactory.cs" />
+    <Compile Include="MIDI\MIDIMessageHandler\IMessageTypeHandler.cs" />
+    <Compile Include="MIDI\MIDIMessageHandler\MetaHandler.cs" />
+    <Compile Include="MIDI\MIDIMessageHandler\MIDITypeHandler\IMidiTypeHandler.cs" />
+    <Compile Include="MIDI\MIDIMessageHandler\MIDITypeHandler\MidiTypeHandlerFactory.cs" />
+    <Compile Include="MIDI\MIDIMessageHandler\MIDITypeHandler\TempoHandler.cs" />
+    <Compile Include="MIDI\MIDIMessageHandler\MIDITypeHandler\TimeSignatureHandler.cs" />
+    <Compile Include="MIDI\MIDIMessageHandler\MIDITypeHandler\TrackNameHandler.cs" />
     <Compile Include="Models\LilypondToken.cs" />
     <Compile Include="Models\LilypondTokenKind.cs" />
+    <Compile Include="States\EditState.cs" />
+    <Compile Include="States\PlayState.cs" />
     <Compile Include="ViewModels\MidiPlayerViewModel.cs" />
     <Compile Include="ViewModels\StaffsViewModel.cs" />
     <Compile Include="Views\MidiPlayerCtrl.xaml.cs">
@@ -124,6 +192,7 @@
     <Compile Include="ViewModels\LilypondViewModel.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\ViewModelLocator.cs" />
+    <Compile Include="Visitor\StaffVisitor.cs" />
     <Page Include="Views\MidiPlayerCtrl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -206,6 +275,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

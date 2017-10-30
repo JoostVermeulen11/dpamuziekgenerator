@@ -5,7 +5,7 @@ using Microsoft.Practices.ServiceLocation;
 
 namespace DPA_Musicsheets.ViewModels
 {
-    public class ViewModelLocator
+    class ViewModelLocator
     {
         public ViewModelLocator()
         {

@@ -8,6 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -15,8 +16,11 @@ using System.Windows.Input;
 
 namespace DPA_Musicsheets.ViewModels
 {
-    public class MainViewModel : ViewModelBase
+    class MainViewModel : ViewModelBase
     {
+        List<Key> _pressedKeys;
+        List<CommandBinding> commandBindings = new List<CommandBinding>();
+
         private string _fileName;
         public string FileName
         {
@@ -31,6 +35,8 @@ namespace DPA_Musicsheets.ViewModels
             }
         }
 
+        private string keyCombination;
+
         private string _currentState;
         public string CurrentState
         {
@@ -38,27 +44,29 @@ namespace DPA_Musicsheets.ViewModels
             set { _currentState = value; RaisePropertyChanged(() => CurrentState); }
         }
 
+        
         private FileHandler _fileHandler;
 
         public MainViewModel(FileHandler fileHandler)
         {
-            _fileHandler = fileHandler;
+            Console.WriteLine("\n");
+            this._fileHandler = fileHandler;
             FileName = @"Files/Alle-eendjes-zwemmen-in-het-water.mid";
 
             MessengerInstance.Register<CurrentStateMessage>(this, (message) => CurrentState = message.State);
+            _pressedKeys = new List<Key>();
+            keyCombination = "";
         }
+
 
         public ICommand OpenFileCommand => new RelayCommand(() =>
         {
-            OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "Midi or LilyPond files (*.mid *.ly)|*.mid;*.ly" };
-            if (openFileDialog.ShowDialog() == true)
-            {
-                FileName = openFileDialog.FileName;
-            }
+            _fileHandler.OpenFile();           
         });
+
         public ICommand LoadCommand => new RelayCommand(() =>
         {
-            _fileHandler.OpenFile(FileName);
+            _fileHandler.ConvertFile(FileName);
         });
         
         public ICommand OnLostFocusCommand => new RelayCommand(() =>
@@ -67,14 +75,39 @@ namespace DPA_Musicsheets.ViewModels
         });
 
         public ICommand OnKeyDownCommand => new RelayCommand<KeyEventArgs>((e) =>
+        {            
+            Key key = (e.Key == Key.System ? e.SystemKey : e.Key);
+            if (!_pressedKeys.Contains(key))
+                _pressedKeys.Add(key);
+
+            AddKeys();
+            e.Handled = true;
+        });
+        
+        public ICommand OnKeyUpCommand => new RelayCommand<KeyEventArgs>((e) =>
         {
-            Console.WriteLine($"Key down: {e.Key}");
+            _pressedKeys.Remove(e.Key);
+            AddKeys();
+            e.Handled = true;            
+            executeCommand(keyCombination);
+            keyCombination = "";
         });
 
-        public ICommand OnKeyUpCommand => new RelayCommand(() =>
+        private void executeCommand(string command)
         {
-            Console.WriteLine("Key Up");
-        });
+            Console.WriteLine(command);
+            this._fileHandler.TryExecuteCommand(command);
+        }
+
+        private void AddKeys()
+        {
+            foreach (Key key in _pressedKeys)
+            {              
+                if (keyCombination != key.ToString())
+                    keyCombination += key.ToString();
+            }
+            _pressedKeys.Clear();         
+        }
 
         public ICommand OnWindowClosingCommand => new RelayCommand(() =>
         {

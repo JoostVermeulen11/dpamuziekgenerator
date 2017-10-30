@@ -12,7 +12,7 @@ using System.Windows.Input;
 
 namespace DPA_Musicsheets.ViewModels
 {
-    public class LilypondViewModel : ViewModelBase
+    class LilypondViewModel : ViewModelBase
     {
         private FileHandler _fileHandler;
 
@@ -46,10 +46,10 @@ namespace DPA_Musicsheets.ViewModels
         {
             _fileHandler = fileHandler;
 
-            _fileHandler.LilypondTextChanged += (src, e) =>
+            _fileHandler.TextChanged += (src, e) =>
             {
                 _textChangedByLoad = true;
-                LilypondText = _previousText = e.LilypondText;
+                LilypondText = _previousText = e.Text;
                 _textChangedByLoad = false;
             };
 
@@ -71,7 +71,7 @@ namespace DPA_Musicsheets.ViewModels
                         _waitingForRender = false;
                         UndoCommand.RaiseCanExecuteChanged();
 
-                        _fileHandler.LoadLilypond(LilypondText);
+                       // _fileHandler.LoadLilypond(LilypondText);
                     }
                 }, TaskScheduler.FromCurrentSynchronizationContext()); // Request from main thread.
             }
@@ -100,15 +100,15 @@ namespace DPA_Musicsheets.ViewModels
                 string extension = Path.GetExtension(saveFileDialog.FileName);
                 if (extension.EndsWith(".mid"))
                 {
-                    _fileHandler.SaveToMidi(saveFileDialog.FileName);
+                   // _fileHandler.SaveToMidi(saveFileDialog.FileName);
                 }
                 else if (extension.EndsWith(".ly"))
                 {
-                    _fileHandler.SaveToLilypond(saveFileDialog.FileName);
+                   // _fileHandler.SaveToLilypond(saveFileDialog.FileName);
                 }
                 else if (extension.EndsWith(".pdf"))
                 {
-                    _fileHandler.SaveToPDF(saveFileDialog.FileName);
+                   // _fileHandler.SaveToPDF(saveFileDialog.FileName);
                 }
                 else
                 {
