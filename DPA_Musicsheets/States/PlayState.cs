@@ -26,8 +26,8 @@ namespace DPA_Musicsheets.States
             Commands = new List<ICommand>();
 
             Commands.Add(new OpenFileCommand(fileHandler));
-            //Commands.Add(new SaveAsPDFCommand(fileHandler));
-            //Commands.Add(new SaveAsLilypondCommand(fileHandler));
+            Commands.Add(new SaveAsPDFCommand(fileHandler));
+            Commands.Add(new SaveAsLilypondCommand(fileHandler));
         }
 
         public bool CanExecuteCommand(string keys)

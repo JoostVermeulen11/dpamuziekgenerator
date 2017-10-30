@@ -79,6 +79,18 @@ namespace DPA_Musicsheets.Managers
             SequenceChanged?.Invoke(this, new SequenceEventArgs() { PlayableSequence = drawer.PlayableSequence });
         }
 
+        public void SaveFile(string fileFormat)
+        {
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+            saveFileDialog1.Title = "Sla je muziek op";
+            saveFileDialog1.ShowDialog();
+            if (saveFileDialog1.FileName != "")
+            {
+                //save(type, saveFileDialog1.FileName);
+                //HasSaved = true;
+            }
+        }
+
         void attachObserver(INoteObserver observer)
         {
             if (!noteObservers.Contains(observer))

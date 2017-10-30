@@ -17,12 +17,17 @@ namespace DPA_Musicsheets.Commands
             this.fileHandler = fileHandler;
         }
 
-
-        public string pattern => throw new NotImplementedException();
+        public string pattern
+        {
+            get
+            {
+                return "LeftCtrlS";
+            }
+        }
 
         public void execute()
         {
-            throw new NotImplementedException();
+            fileHandler.SaveFile("lilypond");
         }
     }
 }
