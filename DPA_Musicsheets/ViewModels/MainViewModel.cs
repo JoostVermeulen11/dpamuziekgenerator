@@ -19,7 +19,6 @@ namespace DPA_Musicsheets.ViewModels
     class MainViewModel : ViewModelBase
     {
         List<Key> _pressedKeys;
-        List<CommandBinding> commandBindings = new List<CommandBinding>();
 
         private string _fileName;
         public string FileName
@@ -57,7 +56,6 @@ namespace DPA_Musicsheets.ViewModels
             _pressedKeys = new List<Key>();
             keyCombination = "";
         }
-
 
         public ICommand OpenFileCommand => new RelayCommand(() =>
         {
