@@ -14,6 +14,7 @@ namespace DPA_Musicsheets.Lilypond.Interpreter
         public MusicSheet process(LinkedList<Token> tokens)
         {
             Context context = new Context();
+            
             LinkedListNode<Token> currentToken = tokens.First;
             while (currentToken != null)
             {

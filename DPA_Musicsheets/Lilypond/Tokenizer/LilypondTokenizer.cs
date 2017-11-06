@@ -44,7 +44,8 @@ namespace DPA_Musicsheets.Lilypond.Tokenizer
 
         public void proces(String music)
         {
-            music = music.Replace("\r\n", string.Empty);
+            music = music.Trim().ToLower().Replace("\r\n", " ").Replace("\n", " ").Replace("  ", " ");
+            //music = music.Replace("\r\n", string.Empty);
             inputList = music.Split(' ');
             for (int i = 0; i < inputList.Length; i++)
             {

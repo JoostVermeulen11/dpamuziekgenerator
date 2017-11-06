@@ -23,7 +23,7 @@ namespace DPA_Musicsheets.MIDI.MIDIMessageHandler.MIDITypeHandler
             byte[] bytes = metaMessage.GetBytes();
             int tempo = (bytes[0] & 0xff) << 16 | (bytes[1] & 0xff) << 8 | (bytes[2] & 0xff);
             int bpm = 60000000 / tempo;
-            Tempo tempoObj = new Tempo(bpm, 1);// Midi kent bij het tempo niet een noot en daarom is de noot lengte standaard 1
+            Tempo tempoObj = new Tempo(bpm, 4);
             context.musicSheet.addmusicSymbol(tempoObj);
         }
     }

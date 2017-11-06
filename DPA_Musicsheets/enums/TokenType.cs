@@ -17,6 +17,7 @@ namespace DPA_Musicsheets.enums
         Startblok,
         EndBlok,
         Tempo,
+        Staff,
         TempoValue,
         Maatstreep,
         Rust,

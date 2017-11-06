@@ -11,6 +11,9 @@ namespace DPA_Musicsheets.Lilypond.Interpreter
     {
         private Dictionary<string, Boolean> _variables;
         public MusicSheet musicSheet { get; set; }
+        public int previousOctave = 4;
+        public char previousNote = 'c';
+        public Clef currentClef = null;
 
         public Context()
         {

@@ -13,6 +13,8 @@ namespace DPA_Musicsheets.Lilypond.Tokenizer.checkers
         private char[] noteLookup = { 'c', 'd', 'e', 'f', 'g', 'a', 'b', '\'', ',', '~', '.', 'i', 's' };
         public bool canhandle(string input)
         {
+            input = input.ToLower();
+
             if (input.Length >= 2 && !input.Contains("="))
             {
                 int counter = 0;

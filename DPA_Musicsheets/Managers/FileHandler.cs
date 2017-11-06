@@ -3,6 +3,7 @@ using DPA_Musicsheets.classes;
 using DPA_Musicsheets.Factories;
 using DPA_Musicsheets.Interfaces;
 using DPA_Musicsheets.Models;
+using DPA_Musicsheets.Saving;
 using DPA_Musicsheets.States;
 using Microsoft.Win32;
 using PSAMControlLibrary;
@@ -81,15 +82,23 @@ namespace DPA_Musicsheets.Managers
 
         public void SaveFile(string fileFormat)
         {
-            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
-            saveFileDialog1.Title = "Sla je muziek op";
-            saveFileDialog1.ShowDialog();
-            if (saveFileDialog1.FileName != "")
+            SaveFileDialog dialog = new SaveFileDialog();
+            dialog.Title = "Sla je muziek op";
+            dialog.ShowDialog();
+            if (dialog.FileName != "")
             {
-                //save(type, saveFileDialog1.FileName);
+                save(fileFormat, dialog.FileName);
                 //HasSaved = true;
             }
         }
+
+        public void save(string type, string fileLocation)
+        {
+            ISave saver = SaveFactory.getSaver(type);
+            saver.save(musicSheet, fileLocation);
+        }
+
+
 
         void attachObserver(INoteObserver observer)
         {

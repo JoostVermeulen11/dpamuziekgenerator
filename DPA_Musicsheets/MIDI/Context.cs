@@ -28,9 +28,6 @@ namespace DPA_Musicsheets.MIDI
         public int previousMidiKey = 60; // Central C;
         public int previousNoteAbsoluteTicks = 0;
         public double percentageOfBarReached = 0;
-        public bool startedNoteIsClosed = true;
-
-
-        
+        public bool startedNoteIsClosed = true;        
     }
 }
