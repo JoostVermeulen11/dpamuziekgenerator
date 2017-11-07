@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace DPA_Musicsheets.Lilypond
 {
@@ -28,7 +29,13 @@ namespace DPA_Musicsheets.Lilypond
 
         public string GetText(string fileName)
         {
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+            foreach (var line in File.ReadAllLines(fileName))
+            {
+                sb.AppendLine(line);
+            }
+
+            return sb.ToString();
         }
     }
 }

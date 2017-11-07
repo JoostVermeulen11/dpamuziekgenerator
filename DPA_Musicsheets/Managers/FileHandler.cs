@@ -1,5 +1,6 @@
 ﻿
 using DPA_Musicsheets.classes;
+using DPA_Musicsheets.EventArgs;
 using DPA_Musicsheets.Factories;
 using DPA_Musicsheets.Interfaces;
 using DPA_Musicsheets.Lilypond;
@@ -34,6 +35,17 @@ namespace DPA_Musicsheets.Managers
             }
         }
 
+        private string _currentStateText;
+        public string CurrentStateText
+        {
+            get { return _currentStateText; }
+            set
+            {
+                _currentStateText = value;
+                StateChanged?.Invoke(this, new CurrentStateEventArgs() { State = value });
+            }
+        }
+
         //zelf erbij gezet
         private IInputReader inputReader;
         private MusicSheet musicSheet;    
@@ -41,6 +53,7 @@ namespace DPA_Musicsheets.Managers
         private StaffDrawer drawer;
         public IState CurrentState { get; set; }
         public Memento.Memento memento { get; set; }
+        private string fileName;
         // tot hier
 
         public List<MusicalSymbol> WPFStaffs { get; set; } = new List<MusicalSymbol>();
@@ -48,18 +61,20 @@ namespace DPA_Musicsheets.Managers
 
         public FileHandler()
         {
+            CurrentState = new PlayState(this);
             noteObservers = new List<INoteObserver>();
             drawer = new StaffDrawer(WPFStaffs);
             this.attachObserver(drawer);
             memento = new Memento.Memento(this);
-
-            CurrentState = new PlayState(this);
+            
+            
         }
 
         public event EventHandler<TextEventArgs> EditorTextChanged;
         public event EventHandler<WPFStaffsEventArgs> WPFStaffsChanged;
         public event EventHandler<SequenceEventArgs> SequenceChanged;
         public event EventHandler<FilenameEventArgs> FilenameChanged;
+        public event EventHandler<CurrentStateEventArgs> StateChanged;
 
         public void OpenFile()
         {
@@ -68,6 +83,7 @@ namespace DPA_Musicsheets.Managers
             {
                 ConvertFile(openFileDialog.FileName);
                 FilenameChanged?.Invoke(this, new FilenameEventArgs() { Filename = openFileDialog.FileName });
+                fileName = openFileDialog.FileName;
             }
         }
 
@@ -77,17 +93,17 @@ namespace DPA_Musicsheets.Managers
 
             inputReader = ReaderFactory.getReader(System.IO.Path.GetExtension(fileName));
             musicSheet = inputReader.readNotes(fileName);
-
-            if (Path.GetExtension(fileName).EndsWith(".ly"))
-            {
-                EditorText = inputReader.GetText(fileName); 
-            }
-
+                                      
             notifyAll();
                            
             WPFStaffsChanged?.Invoke(this, new WPFStaffsEventArgs() { Symbols = WPFStaffs, Message = "" });
 
             SequenceChanged?.Invoke(this, new SequenceEventArgs() { PlayableSequence = drawer.PlayableSequence });
+        }
+
+        public void SetEditText(string fileName)
+        {
+            EditorText = inputReader.GetText(fileName);
         }
 
         public void SaveFile(string fileFormat)
@@ -144,6 +160,11 @@ namespace DPA_Musicsheets.Managers
             WPFStaffsChanged?.Invoke(this, new WPFStaffsEventArgs() { Symbols = WPFStaffs, Message = "" });
 
             SequenceChanged?.Invoke(this, new SequenceEventArgs() { PlayableSequence = drawer.PlayableSequence });
+        }
+
+        public string GetFileName()
+        {
+            return fileName;
         }
     }
 }

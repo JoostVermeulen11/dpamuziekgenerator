@@ -17,5 +17,7 @@ namespace DPA_Musicsheets.Interfaces
         void ExecuteCommand();
 
         void SwitchState();
+
+        string getEditString();
     }
 }

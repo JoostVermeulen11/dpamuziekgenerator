@@ -8,7 +8,20 @@ namespace DPA_Musicsheets.ViewModels
 {
     class MidiPlayerViewModel : ViewModelBase
     {
+        private bool _IsPlayingEnabled;
+
+        public bool IsPlayingEnabled
+        {
+            get { return _IsPlayingEnabled; }
+            set
+            {
+                _IsPlayingEnabled = value;
+                RaisePropertyChanged(() => IsPlayingEnabled);
+            }
+        }
+
         private FileHandler _fileHandler;
+
 
         private OutputDevice _outputDevice;
 
@@ -46,6 +59,26 @@ namespace DPA_Musicsheets.ViewModels
                 _sequencer.Sequence = args.PlayableSequence;
                 UpdateButtons();
             };
+
+            PlayModeFactory(_fileHandler.CurrentState.getEditString());
+
+            _fileHandler.StateChanged += (src, e) =>
+            {
+                PlayModeFactory(e.State);
+            };
+
+        }
+
+        public void PlayModeFactory(string state)
+        {
+            if (state.Equals("Edit"))
+            {
+                IsPlayingEnabled = false;         
+            }
+            else
+            {
+                IsPlayingEnabled = true;             
+            }
         }
 
         private void UpdateButtons()

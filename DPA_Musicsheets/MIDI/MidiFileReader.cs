@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DPA_Musicsheets.classes;
+using System.IO;
 
 namespace DPA_Musicsheets.MIDI
 {
@@ -17,7 +18,7 @@ namespace DPA_Musicsheets.MIDI
 
         public string GetText(string fileName)
         {
-            throw new NotImplementedException();
+            throw new Exception("Staat nergens dat we Midi moeten kunnen bewerken :)");
         }
 
         public MusicSheet readNotes(string data)

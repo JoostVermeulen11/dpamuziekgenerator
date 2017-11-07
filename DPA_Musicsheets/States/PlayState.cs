@@ -20,6 +20,7 @@ namespace DPA_Musicsheets.States
         public PlayState(FileHandler fileHandler)
         {
             this.fileHandler = fileHandler;
+            
             this.Type = StateType.Play;
 
             Commands = new List<ICommand>();
@@ -50,7 +51,14 @@ namespace DPA_Musicsheets.States
 
         public void SwitchState()
         {
-            fileHandler.CurrentState = new EditState(fileHandler);
+            EditState editState = new EditState(fileHandler);
+            fileHandler.CurrentState = editState;
+            fileHandler.CurrentStateText = editState.getEditString();
+        }
+
+        public string getEditString()
+        {
+            return "Play";
         }
     }
 }

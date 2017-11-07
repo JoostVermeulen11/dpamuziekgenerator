@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace DPA_Musicsheets.Managers
 {
-    public class WPFStaffsEventArgs : EventArgs
+    public class WPFStaffsEventArgs
     {
         public IEnumerable<MusicalSymbol> Symbols { get; set; }
         public string Message { get; set; }

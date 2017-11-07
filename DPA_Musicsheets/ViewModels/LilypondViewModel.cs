@@ -19,6 +19,28 @@ namespace DPA_Musicsheets.ViewModels
         private string _text;
         private string _previousText;
         private string _nextText;
+        private bool _IsEditingEnabled;
+        private string _EditButtonContent;
+
+        public string EditButtonContent
+        {
+            get { return _EditButtonContent; }
+            set
+            {
+                _EditButtonContent = value;
+                RaisePropertyChanged(() => EditButtonContent);
+            }
+        }
+
+        public bool IsEditingEnabled
+        {
+            get { return _IsEditingEnabled; }
+            set
+            {
+                _IsEditingEnabled = value;
+                RaisePropertyChanged(() => IsEditingEnabled);
+            }
+        }
 
         public string LilypondText
         {
@@ -43,8 +65,11 @@ namespace DPA_Musicsheets.ViewModels
         private bool _waitingForRender = false;
 
         public LilypondViewModel(FileHandler fileHandler)
-        {
+        {           
+            IsEditingEnabled = true;
             _fileHandler = fileHandler;
+
+            EditModeFactory(_fileHandler.CurrentState.getEditString());
 
             _fileHandler.EditorTextChanged += (src, e) =>
             {
@@ -53,7 +78,26 @@ namespace DPA_Musicsheets.ViewModels
                 _textChangedByLoad = false;
             };
 
-            _text = "Click on the editbutton to edit something.";
+            _text = "Click on the edit button to edit something.";
+           
+            _fileHandler.StateChanged += (src, e) =>
+            {
+                EditModeFactory(e.State);
+            };
+        }
+
+        public void EditModeFactory(string state)
+        {
+            if (state.Equals("Edit"))
+            {
+                IsEditingEnabled = true;
+                EditButtonContent = "Stop editing";      
+            }
+            else
+            {
+                IsEditingEnabled = false;
+                EditButtonContent = "Start editing";
+            }
         }
 
         public ICommand TextChangedCommand => new RelayCommand<TextChangedEventArgs>((args) =>
@@ -111,16 +155,12 @@ namespace DPA_Musicsheets.ViewModels
                 {
                     this._fileHandler.TryExecuteCommand("LeftCtrlSP");
                 }
-                else
-                {
-                    MessageBox.Show($"Extension {extension} is not supported.");
-                }
             }
         });
 
         public ICommand EditStateCommand => new RelayCommand(() =>
         {
-            _fileHandler.CurrentState.SwitchState();
+            _fileHandler.CurrentState.SwitchState();            
         });
     }
 }

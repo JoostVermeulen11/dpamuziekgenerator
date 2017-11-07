@@ -24,6 +24,8 @@ namespace DPA_Musicsheets.States
 
             Commands = new List<ICommand>();
 
+            fileHandler.SetEditText(fileHandler.GetFileName());
+
             //Commands.Add(new InsertBarLinesCommand(controller));
             //Commands.Add(new InsertClefCommand(controller));
             //Commands.Add(new InsertTempoCommand(controller));
@@ -58,7 +60,14 @@ namespace DPA_Musicsheets.States
 
         public void SwitchState()
         {
-            fileHandler.CurrentState = new PlayState(fileHandler);
+            PlayState playState = new PlayState(fileHandler);
+            fileHandler.CurrentState = playState;
+            fileHandler.CurrentStateText = playState.getEditString();
+        }
+
+        public string getEditString()
+        {
+            return "Edit";
         }
     }
 }
