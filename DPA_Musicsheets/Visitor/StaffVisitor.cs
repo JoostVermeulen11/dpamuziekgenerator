@@ -51,9 +51,12 @@ namespace DPA_Musicsheets.Visitor
 
         public void visit(DPA_Musicsheets.classes.Clef clef)
         {
-            MusicalSymbol symbol = clefAdapter.ModelToLibrary(clef);
-            staff.Add(symbol);
-            symbols.Add(symbol);
+            if(symbols.First().Type != MusicalSymbolType.Clef)
+            {
+                MusicalSymbol symbol = clefAdapter.ModelToLibrary(clef);
+                staff.Add(symbol);
+                symbols.Add(symbol);
+            }
         }
 
         public void visit(DPA_Musicsheets.classes.TimeSignature timeSignature)
