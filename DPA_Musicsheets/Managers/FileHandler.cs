@@ -78,6 +78,12 @@ namespace DPA_Musicsheets.Managers
 
         public void OpenFile()
         {
+            //reset the box
+            if (CurrentState.getEditString().Equals("Edit"))
+            {
+                CurrentState.SwitchState();
+            }
+
             OpenFileDialog openFileDialog = new OpenFileDialog();
             if (openFileDialog.ShowDialog() == true)
             {
@@ -90,6 +96,7 @@ namespace DPA_Musicsheets.Managers
         public void ConvertFile(string fileName)
         {
             WPFStaffs.Clear();
+            EditorText = "";
 
             inputReader = ReaderFactory.getReader(System.IO.Path.GetExtension(fileName));
             musicSheet = inputReader.readNotes(fileName);
@@ -103,6 +110,9 @@ namespace DPA_Musicsheets.Managers
 
         public void SetEditText(string fileName)
         {
+            if (fileName == "" || fileName == null)
+                return;
+
             EditorText = inputReader.GetText(fileName);
         }
 

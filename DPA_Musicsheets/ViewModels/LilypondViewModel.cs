@@ -78,8 +78,7 @@ namespace DPA_Musicsheets.ViewModels
                 _textChangedByLoad = false;
             };
 
-            _text = "Click on the edit button to edit something.";
-           
+             
             _fileHandler.StateChanged += (src, e) =>
             {
                 EditModeFactory(e.State);
