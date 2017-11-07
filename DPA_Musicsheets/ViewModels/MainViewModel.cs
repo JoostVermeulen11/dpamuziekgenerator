@@ -43,12 +43,12 @@ namespace DPA_Musicsheets.ViewModels
             set { _currentState = value; RaisePropertyChanged(() => CurrentState); }
         }
 
-        
         private FileHandler _fileHandler;
 
         public MainViewModel(FileHandler fileHandler)
         {
             this._fileHandler = fileHandler;
+            FileName = @"Files/Alle-eendjes-zwemmen-in-het-water.mid";
 
             _fileHandler.FilenameChanged += (src, args) =>
             {
@@ -95,8 +95,7 @@ namespace DPA_Musicsheets.ViewModels
         });
 
         private void executeCommand(string command)
-        {
-            Console.WriteLine(command);
+        {      
             this._fileHandler.TryExecuteCommand(command);
         }
 

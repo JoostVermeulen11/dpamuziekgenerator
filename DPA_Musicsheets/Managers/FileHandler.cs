@@ -4,6 +4,7 @@ using DPA_Musicsheets.Factories;
 using DPA_Musicsheets.Interfaces;
 using DPA_Musicsheets.Models;
 using DPA_Musicsheets.Saving;
+using DPA_Musicsheets.Saving.Savers.ToLilypond;
 using DPA_Musicsheets.States;
 using Microsoft.Win32;
 using PSAMControlLibrary;
@@ -29,7 +30,7 @@ namespace DPA_Musicsheets.Managers
             set
             {
                 _editorText = value;
-                TextChanged?.Invoke(this, new TextEventArgs() { Text = value });
+                EditorTextChanged?.Invoke(this, new TextEventArgs() { Text = value });
             }
         }
 
@@ -39,6 +40,8 @@ namespace DPA_Musicsheets.Managers
         private List<INoteObserver> noteObservers;
         private StaffDrawer drawer;
         public IState CurrentState { get; set; }
+        private ToLilypondConverter LilypondConverter;
+        public Memento.Memento memento { get; set; }
         // tot hier
 
         public List<MusicalSymbol> WPFStaffs { get; set; } = new List<MusicalSymbol>();
@@ -48,12 +51,14 @@ namespace DPA_Musicsheets.Managers
         {
             noteObservers = new List<INoteObserver>();
             drawer = new StaffDrawer(WPFStaffs);
+            LilypondConverter = new ToLilypondConverter();
             this.attachObserver(drawer);
+            memento = new Memento.Memento(this);
 
             CurrentState = new PlayState(this);
         }
 
-        public event EventHandler<TextEventArgs> TextChanged;
+        public event EventHandler<TextEventArgs> EditorTextChanged;
         public event EventHandler<WPFStaffsEventArgs> WPFStaffsChanged;
         public event EventHandler<SequenceEventArgs> SequenceChanged;
         public event EventHandler<FilenameEventArgs> FilenameChanged;
@@ -79,6 +84,13 @@ namespace DPA_Musicsheets.Managers
             WPFStaffsChanged?.Invoke(this, new WPFStaffsEventArgs() { Symbols = WPFStaffs, Message = "" });
 
             SequenceChanged?.Invoke(this, new SequenceEventArgs() { PlayableSequence = drawer.PlayableSequence });
+        }
+
+
+
+        public string GetLilypond()
+        {
+            return LilypondConverter.ToLilypond(musicSheet);
         }
 
         public void SaveFile(string fileFormat)
@@ -117,10 +129,24 @@ namespace DPA_Musicsheets.Managers
 
         private void notifyAll()
         {
+
             for (int i = 0; i < noteObservers.Count; i++)
             {
                 noteObservers[i].update(musicSheet);
             }
-        }      
+        }    
+        
+        public void RedrawStaff()
+        {
+            WPFStaffs.Clear();
+
+            inputReader = ReaderFactory.getReader("lilypond");
+            musicSheet = inputReader.readNotes(EditorText);
+            notifyAll();
+
+            WPFStaffsChanged?.Invoke(this, new WPFStaffsEventArgs() { Symbols = WPFStaffs, Message = "" });
+
+            SequenceChanged?.Invoke(this, new SequenceEventArgs() { PlayableSequence = drawer.PlayableSequence });
+        }
     }
 }

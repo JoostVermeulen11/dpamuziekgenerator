@@ -17,7 +17,6 @@ namespace DPA_Musicsheets.States
         public ICommand ExecutableCommand { get; set; }
 
         private FileHandler fileHandler;
-
         public PlayState(FileHandler fileHandler)
         {
             this.fileHandler = fileHandler;

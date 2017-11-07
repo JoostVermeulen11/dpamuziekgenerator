@@ -6,18 +6,23 @@ using System.Text;
 using System.Threading.Tasks;
 using DPA_Musicsheets.enums;
 using DPA_Musicsheets.Managers;
+using DPA_Musicsheets.Commands;
 
 namespace DPA_Musicsheets.States
 {
     class EditState : IState
     {
+        public List<ICommand> Commands { get; set; }
+        public StateType Type { get; set; }
+        public ICommand ExecutableCommand { get; set; }
+
         private FileHandler fileHandler; 
         public EditState(FileHandler fileHandler)
-        {
-            Type = StateType.Edit;
+        {         
             this.fileHandler = fileHandler;
+            Type = StateType.Edit;
 
-            //controller.SetEditText(controller.GetLilypond());
+            fileHandler.EditorText = fileHandler.GetLilypond();
 
             Commands = new List<ICommand>();
 
@@ -27,28 +32,35 @@ namespace DPA_Musicsheets.States
             //Commands.Add(new InsertTimeCommand(controller));
             //Commands.Add(new InsertTime3_4Command(controller));
             //Commands.Add(new InsertTime6_8Command(controller));
-            //Commands.Add(new OpenFileCommand(controller));
-            //Commands.Add(new SaveAsPDFCommand(controller));
-            //Commands.Add(new SaveAsLilypondCommand(controller));
+            
 
+            Commands.Add(new OpenFileCommand(fileHandler));
+            Commands.Add(new SaveAsPDFCommand(fileHandler));
+            Commands.Add(new SaveAsLilypondCommand(fileHandler));
         }
-
-        public List<ICommand> Commands { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public StateType Type { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
 
         public bool CanExecuteCommand(string keys)
         {
-            throw new NotImplementedException();
+            foreach (ICommand command in Commands)
+            {
+                if (keys.Contains(command.pattern))
+                {
+                    ExecutableCommand = command;
+                    return true;
+                }
+            }
+
+            return false;
         }
 
         public void ExecuteCommand()
         {
-            throw new NotImplementedException();
+            ExecutableCommand.execute();
         }
 
         public void SwitchState()
         {
-            throw new NotImplementedException();
+            fileHandler.CurrentState = new PlayState(fileHandler);
         }
     }
 }

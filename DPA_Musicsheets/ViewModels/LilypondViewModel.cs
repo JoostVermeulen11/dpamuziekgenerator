@@ -32,7 +32,7 @@ namespace DPA_Musicsheets.ViewModels
                 {
                     _previousText = _text;
                 }
-                _text = value;
+                _text = value;                
                 RaisePropertyChanged(() => LilypondText);
             }
         }
@@ -46,16 +46,16 @@ namespace DPA_Musicsheets.ViewModels
         {
             _fileHandler = fileHandler;
 
-            _fileHandler.TextChanged += (src, e) =>
+            _fileHandler.EditorTextChanged += (src, e) =>
             {
                 _textChangedByLoad = true;
                 LilypondText = _previousText = e.Text;
                 _textChangedByLoad = false;
             };
 
-            _text = "Your lilypond text will appear here.";
+            _text = "Click on the editbutton to edit something.";
         }
-        
+
         public ICommand TextChangedCommand => new RelayCommand<TextChangedEventArgs>((args) =>
         {
             if (!_textChangedByLoad)
@@ -69,9 +69,9 @@ namespace DPA_Musicsheets.ViewModels
                     if ((DateTime.Now - _lastChange).TotalMilliseconds >= MILLISECONDS_BEFORE_CHANGE_HANDLED)
                     {
                         _waitingForRender = false;
-                        UndoCommand.RaiseCanExecuteChanged();
+                        //UndoCommand.RaiseCanExecuteChanged();
 
-                       // _fileHandler.LoadLilypond(LilypondText);
+                        _fileHandler.memento.NewNode(LilypondText);
                     }
                 }, TaskScheduler.FromCurrentSynchronizationContext()); // Request from main thread.
             }
@@ -100,21 +100,26 @@ namespace DPA_Musicsheets.ViewModels
                 string extension = Path.GetExtension(saveFileDialog.FileName);
                 if (extension.EndsWith(".mid"))
                 {
-                   // _fileHandler.SaveToMidi(saveFileDialog.FileName);
+                    // _fileHandler.SaveToMidi(saveFileDialog.FileName);
                 }
                 else if (extension.EndsWith(".ly"))
                 {
-                   // _fileHandler.SaveToLilypond(saveFileDialog.FileName);
+                    // _fileHandler.SaveToLilypond(saveFileDialog.FileName);
                 }
                 else if (extension.EndsWith(".pdf"))
                 {
-                   // _fileHandler.SaveToPDF(saveFileDialog.FileName);
+                    // _fileHandler.SaveToPDF(saveFileDialog.FileName);
                 }
                 else
                 {
                     MessageBox.Show($"Extension {extension} is not supported.");
                 }
             }
+        });
+
+        public ICommand EditStateCommand => new RelayCommand(() =>
+        {
+            _fileHandler.CurrentState.SwitchState();
         });
     }
 }
