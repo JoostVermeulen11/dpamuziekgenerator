@@ -48,9 +48,12 @@ namespace DPA_Musicsheets.ViewModels
 
         public MainViewModel(FileHandler fileHandler)
         {
-            Console.WriteLine("\n");
             this._fileHandler = fileHandler;
-            FileName = @"Files/Alle-eendjes-zwemmen-in-het-water.mid";
+
+            _fileHandler.FilenameChanged += (src, args) =>
+            {
+                FileName = args.Filename;
+            };
 
             MessengerInstance.Register<CurrentStateMessage>(this, (message) => CurrentState = message.State);
             _pressedKeys = new List<Key>();
@@ -59,7 +62,7 @@ namespace DPA_Musicsheets.ViewModels
 
         public ICommand OpenFileCommand => new RelayCommand(() =>
         {
-            _fileHandler.OpenFile();           
+            _fileHandler.OpenFile();              
         });
 
         public ICommand LoadCommand => new RelayCommand(() =>

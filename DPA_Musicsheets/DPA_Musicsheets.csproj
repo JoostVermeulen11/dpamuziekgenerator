@@ -159,6 +159,7 @@
     <Compile Include="Lilypond\Tokenizer\checkers\TimeSignatureChecker.cs" />
     <Compile Include="Lilypond\Tokenizer\LilypondTokenizer.cs" />
     <Compile Include="Lilypond\Tokenizer\Token.cs" />
+    <Compile Include="Managers\FilenameEventArgs.cs" />
     <Compile Include="Managers\SequenceEventArgs.cs" />
     <Compile Include="Managers\TextEventArgs.cs" />
     <Compile Include="Managers\WPFStaffsEventArgs.cs" />

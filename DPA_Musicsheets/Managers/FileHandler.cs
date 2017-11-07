@@ -56,6 +56,7 @@ namespace DPA_Musicsheets.Managers
         public event EventHandler<TextEventArgs> TextChanged;
         public event EventHandler<WPFStaffsEventArgs> WPFStaffsChanged;
         public event EventHandler<SequenceEventArgs> SequenceChanged;
+        public event EventHandler<FilenameEventArgs> FilenameChanged;
 
         public void OpenFile()
         {
@@ -63,7 +64,7 @@ namespace DPA_Musicsheets.Managers
             if (openFileDialog.ShowDialog() == true)
             {
                 ConvertFile(openFileDialog.FileName);
-                //FileName = openFileDialog.FileName;
+                FilenameChanged?.Invoke(this, new FilenameEventArgs() { Filename = openFileDialog.FileName });
             }
         }
 
@@ -97,8 +98,6 @@ namespace DPA_Musicsheets.Managers
             ISave saver = SaveFactory.getSaver(type);
             saver.save(musicSheet, fileLocation);
         }
-
-
 
         void attachObserver(INoteObserver observer)
         {
