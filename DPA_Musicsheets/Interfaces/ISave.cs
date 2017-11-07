@@ -9,7 +9,7 @@ namespace DPA_Musicsheets.Interfaces
 {
     interface ISave
     {
-        void save(MusicSheet musicsheet, String fileLocation);
+        void save(string textToSave, String fileLocation);
         ISave clone();
     }
 }

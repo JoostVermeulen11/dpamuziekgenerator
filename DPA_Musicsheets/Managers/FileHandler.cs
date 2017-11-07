@@ -2,9 +2,9 @@
 using DPA_Musicsheets.classes;
 using DPA_Musicsheets.Factories;
 using DPA_Musicsheets.Interfaces;
+using DPA_Musicsheets.Lilypond;
 using DPA_Musicsheets.Models;
 using DPA_Musicsheets.Saving;
-using DPA_Musicsheets.Saving.Savers.ToLilypond;
 using DPA_Musicsheets.States;
 using Microsoft.Win32;
 using PSAMControlLibrary;
@@ -40,7 +40,6 @@ namespace DPA_Musicsheets.Managers
         private List<INoteObserver> noteObservers;
         private StaffDrawer drawer;
         public IState CurrentState { get; set; }
-        private ToLilypondConverter LilypondConverter;
         public Memento.Memento memento { get; set; }
         // tot hier
 
@@ -51,7 +50,6 @@ namespace DPA_Musicsheets.Managers
         {
             noteObservers = new List<INoteObserver>();
             drawer = new StaffDrawer(WPFStaffs);
-            LilypondConverter = new ToLilypondConverter();
             this.attachObserver(drawer);
             memento = new Memento.Memento(this);
 
@@ -79,18 +77,17 @@ namespace DPA_Musicsheets.Managers
 
             inputReader = ReaderFactory.getReader(System.IO.Path.GetExtension(fileName));
             musicSheet = inputReader.readNotes(fileName);
+
+            if (Path.GetExtension(fileName).EndsWith(".ly"))
+            {
+                EditorText = inputReader.GetText(fileName); 
+            }
+
             notifyAll();
                            
             WPFStaffsChanged?.Invoke(this, new WPFStaffsEventArgs() { Symbols = WPFStaffs, Message = "" });
 
             SequenceChanged?.Invoke(this, new SequenceEventArgs() { PlayableSequence = drawer.PlayableSequence });
-        }
-
-
-
-        public string GetLilypond()
-        {
-            return LilypondConverter.ToLilypond(musicSheet);
         }
 
         public void SaveFile(string fileFormat)
@@ -108,7 +105,7 @@ namespace DPA_Musicsheets.Managers
         public void save(string type, string fileLocation)
         {
             ISave saver = SaveFactory.getSaver(type);
-            saver.save(musicSheet, fileLocation);
+            saver.save(EditorText, fileLocation);
         }
 
         void attachObserver(INoteObserver observer)

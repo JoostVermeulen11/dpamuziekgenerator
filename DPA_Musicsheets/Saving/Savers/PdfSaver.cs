@@ -17,12 +17,12 @@ namespace DPA_Musicsheets.Saving.Savers
             return new PdfSaver();
         }
 
-        public void save(MusicSheet musicsheet, string fileLocation)
+        public void save(string textToSave, string fileLocation)
         {
             string lilypondLocation = @"C:\Program Files (x86)\LilyPond\usr\bin\lilypond.exe";
             LilypondSaver lilypondSaver = new LilypondSaver();
-            lilypondSaver.save(musicsheet, fileLocation);
-            fileLocation += ".ly";
+            lilypondSaver.save(textToSave, fileLocation);   
+            
             String[] tempArr = fileLocation.Split('\\');
             string sourcefile = "";
             for (int i = 0; i < tempArr.Length - 1; i++)
@@ -42,7 +42,7 @@ namespace DPA_Musicsheets.Saving.Savers
             };
             process.Start();
             process.WaitForExit();
-            File.Delete(sourcefile + tempArr[tempArr.Length - 1]);           
-        }
+            File.Delete(sourcefile + tempArr[tempArr.Length - 1]);
+        }      
     }
 }

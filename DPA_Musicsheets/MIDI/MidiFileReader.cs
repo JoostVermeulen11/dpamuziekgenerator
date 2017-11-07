@@ -15,6 +15,11 @@ namespace DPA_Musicsheets.MIDI
             return new MidiFileReader();
         }
 
+        public string GetText(string fileName)
+        {
+            throw new NotImplementedException();
+        }
+
         public MusicSheet readNotes(string data)
         {
             MidiAdapter midiAdapter = new MidiAdapter();

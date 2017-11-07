@@ -69,8 +69,9 @@ namespace DPA_Musicsheets.ViewModels
                     if ((DateTime.Now - _lastChange).TotalMilliseconds >= MILLISECONDS_BEFORE_CHANGE_HANDLED)
                     {
                         _waitingForRender = false;
-                        //UndoCommand.RaiseCanExecuteChanged();
+                        UndoCommand.RaiseCanExecuteChanged();
 
+                        _fileHandler.EditorText = LilypondText;
                         _fileHandler.memento.NewNode(LilypondText);
                     }
                 }, TaskScheduler.FromCurrentSynchronizationContext()); // Request from main thread.
@@ -104,11 +105,11 @@ namespace DPA_Musicsheets.ViewModels
                 }
                 else if (extension.EndsWith(".ly"))
                 {
-                    // _fileHandler.SaveToLilypond(saveFileDialog.FileName);
+                    this._fileHandler.TryExecuteCommand("LeftCtrlS");
                 }
                 else if (extension.EndsWith(".pdf"))
                 {
-                    // _fileHandler.SaveToPDF(saveFileDialog.FileName);
+                    this._fileHandler.TryExecuteCommand("LeftCtrlSP");
                 }
                 else
                 {

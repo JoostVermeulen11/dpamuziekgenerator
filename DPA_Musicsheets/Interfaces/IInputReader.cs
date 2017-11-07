@@ -12,5 +12,7 @@ namespace DPA_Musicsheets.Interfaces
         MusicSheet readNotes(String data);
 
         IInputReader clone();
+
+        String GetText(string fileName);
     }
 }

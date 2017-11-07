@@ -22,8 +22,6 @@ namespace DPA_Musicsheets.States
             this.fileHandler = fileHandler;
             Type = StateType.Edit;
 
-            fileHandler.EditorText = fileHandler.GetLilypond();
-
             Commands = new List<ICommand>();
 
             //Commands.Add(new InsertBarLinesCommand(controller));

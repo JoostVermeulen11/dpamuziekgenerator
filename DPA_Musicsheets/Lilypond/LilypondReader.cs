@@ -25,5 +25,10 @@ namespace DPA_Musicsheets.Lilypond
         {
             return new LilypondReader();
         }
+
+        public string GetText(string fileName)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

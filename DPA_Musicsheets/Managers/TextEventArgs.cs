@@ -5,8 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace DPA_Musicsheets.Managers
-{
-    public class TextEventArgs
+{ 
+    public class TextEventArgs : EventArgs
     {
         public string Text { get; set; }
         public string Message { get; set; }

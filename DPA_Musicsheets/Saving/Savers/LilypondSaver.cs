@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DPA_Musicsheets.classes;
-using DPA_Musicsheets.Saving.Savers.ToLilypond;
+using System.IO;
 
 namespace DPA_Musicsheets.Saving.Savers
 {
@@ -16,11 +16,13 @@ namespace DPA_Musicsheets.Saving.Savers
             return new LilypondSaver();
         }
 
-        public void save(MusicSheet musicsheet, string fileLocation)
+        public void save(string textToSave, string fileLocation)
         {
-            ToLilypondConverter converter = new ToLilypondConverter();
-            string data = converter.ToLilypond(musicsheet);
-            System.IO.File.WriteAllText(fileLocation + ".ly", data);
+            using (StreamWriter outputFile = new StreamWriter(fileLocation + ".ly"))
+            {
+                outputFile.Write(textToSave);
+                outputFile.Close();
+            }
         }
     }
 }

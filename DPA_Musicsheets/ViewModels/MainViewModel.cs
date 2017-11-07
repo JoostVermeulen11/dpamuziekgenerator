@@ -18,7 +18,7 @@ namespace DPA_Musicsheets.ViewModels
 {
     class MainViewModel : ViewModelBase
     {
-        List<Key> _pressedKeys;
+        //List<Key> _pressedKeys;
 
         private string _fileName;
         public string FileName
@@ -34,7 +34,7 @@ namespace DPA_Musicsheets.ViewModels
             }
         }
 
-        private string keyCombination;
+        //private string keyCombination;
 
         private string _currentState;
         public string CurrentState
@@ -56,8 +56,8 @@ namespace DPA_Musicsheets.ViewModels
             };
 
             MessengerInstance.Register<CurrentStateMessage>(this, (message) => CurrentState = message.State);
-            _pressedKeys = new List<Key>();
-            keyCombination = "";
+           // _pressedKeys = new List<Key>();
+           // keyCombination = "";
         }
 
         public ICommand OpenFileCommand => new RelayCommand(() =>
@@ -77,21 +77,21 @@ namespace DPA_Musicsheets.ViewModels
 
         public ICommand OnKeyDownCommand => new RelayCommand<KeyEventArgs>((e) =>
         {            
-            Key key = (e.Key == Key.System ? e.SystemKey : e.Key);
-            if (!_pressedKeys.Contains(key))
-                _pressedKeys.Add(key);
+            //Key key = (e.Key == Key.System ? e.SystemKey : e.Key);
+            //if (!_pressedKeys.Contains(key))
+            //    _pressedKeys.Add(key);
 
-            AddKeys();
-            e.Handled = true;
+            //AddKeys();
+            //e.Handled = true;
         });
         
         public ICommand OnKeyUpCommand => new RelayCommand<KeyEventArgs>((e) =>
         {
-            _pressedKeys.Remove(e.Key);
-            AddKeys();
-            e.Handled = true;            
-            executeCommand(keyCombination);
-            keyCombination = "";
+            //_pressedKeys.Remove(e.Key);
+            //AddKeys();
+            //e.Handled = true;            
+            //executeCommand(keyCombination);
+            //keyCombination = "";
         });
 
         private void executeCommand(string command)
@@ -101,12 +101,12 @@ namespace DPA_Musicsheets.ViewModels
 
         private void AddKeys()
         {
-            foreach (Key key in _pressedKeys)
-            {              
-                if (keyCombination != key.ToString())
-                    keyCombination += key.ToString();
-            }
-            _pressedKeys.Clear();         
+            //foreach (Key key in _pressedKeys)
+            //{              
+            //    if (keyCombination != key.ToString())
+            //        keyCombination += key.ToString();
+            //}
+            //_pressedKeys.Clear();         
         }
 
         public ICommand OnWindowClosingCommand => new RelayCommand(() =>

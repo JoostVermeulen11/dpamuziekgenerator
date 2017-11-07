@@ -2,6 +2,7 @@
 using DPA_Musicsheets.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,6 +20,17 @@ namespace DPA_Musicsheets.Lilypond
         {
             LilypondReader reader = new LilypondReader();
             return reader.readNotes(System.IO.File.ReadAllText(fileLocation));
+        }
+
+        public String GetText(string fileName)
+        {
+            StringBuilder sb = new StringBuilder();
+            foreach (var line in File.ReadAllLines(fileName))
+            {
+                sb.AppendLine(line);
+            }
+
+            return sb.ToString();
         }
     }
 }
