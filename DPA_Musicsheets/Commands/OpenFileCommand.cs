@@ -25,6 +25,14 @@ namespace DPA_Musicsheets.Commands
             }
         }
 
+        public string commandName
+        {
+            get
+            {
+                return "OpenPDF";
+            }
+        }
+
         public void execute()
         {
             fileHandler.OpenFile();

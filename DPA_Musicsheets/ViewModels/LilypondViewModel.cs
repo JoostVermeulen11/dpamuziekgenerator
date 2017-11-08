@@ -4,10 +4,12 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
 using System.Windows.Input;
 
 namespace DPA_Musicsheets.ViewModels
@@ -59,6 +61,25 @@ namespace DPA_Musicsheets.ViewModels
             }
         }
 
+        private List<string> _saveMethods;
+        private string _saveMethod;
+
+        public List<string> SaveMethods
+        {
+            get { return _saveMethods; }
+        }
+
+        public string SaveMethod
+        {
+            get { return _saveMethod; }
+            set
+            {
+                if (_saveMethod == value) return;
+                _saveMethod = value;
+                RaisePropertyChanged(() => SaveMethod);
+            }
+        }
+
         private bool _textChangedByLoad = false;
         private DateTime _lastChange;
         private static int MILLISECONDS_BEFORE_CHANGE_HANDLED = 1500;
@@ -69,6 +90,10 @@ namespace DPA_Musicsheets.ViewModels
             IsEditingEnabled = true;
             _fileHandler = fileHandler;
 
+            _saveMethods = new List<string>();
+            SaveMethods.Add("Lilypond");
+            SaveMethods.Add("Pdf");
+
             EditModeFactory(_fileHandler.CurrentState.getEditString());
 
             _fileHandler.EditorTextChanged += (src, e) =>
@@ -77,8 +102,7 @@ namespace DPA_Musicsheets.ViewModels
                 LilypondText = _previousText = e.Text;
                 _textChangedByLoad = false;
             };
-
-             
+                         
             _fileHandler.StateChanged += (src, e) =>
             {
                 EditModeFactory(e.State);
@@ -138,23 +162,24 @@ namespace DPA_Musicsheets.ViewModels
 
         public ICommand SaveAsCommand => new RelayCommand(() =>
         {
-            SaveFileDialog saveFileDialog = new SaveFileDialog() { Filter = "Midi|*.mid|Lilypond|*.ly|PDF|*.pdf" };
-            if (saveFileDialog.ShowDialog() == true)
-            {
-                string extension = Path.GetExtension(saveFileDialog.FileName);
-                if (extension.EndsWith(".mid"))
-                {
-                    // _fileHandler.SaveToMidi(saveFileDialog.FileName);
-                }
-                else if (extension.EndsWith(".ly"))
-                {
-                    this._fileHandler.TryExecuteCommand("LeftCtrlS");
-                }
-                else if (extension.EndsWith(".pdf"))
-                {
-                    this._fileHandler.TryExecuteCommand("LeftCtrlSP");
-                }
-            }
+            this._fileHandler.TryExecuteCommand(SaveMethod);
+            //SaveFileDialog saveFileDialog = new SaveFileDialog() { Filter = "Midi|*.mid|Lilypond|*.ly|PDF|*.pdf" };
+            //if (saveFileDialog.ShowDialog() == true)
+            //{
+            //    string extension = Path.GetExtension(saveFileDialog.FileName);
+            //    if (extension.EndsWith(".mid"))
+            //    {
+            //        // _fileHandler.SaveToMidi(saveFileDialog.FileName);
+            //    }
+            //    else if (extension.EndsWith(".ly"))
+            //    {
+            //        this._fileHandler.TryExecuteCommand("LeftCtrlS");
+            //    }
+            //    else if (extension.EndsWith(".pdf"))
+            //    {
+            //        this._fileHandler.TryExecuteCommand("LeftCtrlSP");
+            //    }
+            //}
         });
 
         public ICommand EditStateCommand => new RelayCommand(() =>

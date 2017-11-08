@@ -25,6 +25,14 @@ namespace DPA_Musicsheets.Commands
             }
         }
 
+        public string commandName
+        {
+            get
+            {
+                return "Lilypond";
+            }
+        }
+
         public void execute()
         {
             fileHandler.SaveFile("lilypond");

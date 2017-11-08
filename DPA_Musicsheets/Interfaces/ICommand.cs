@@ -9,6 +9,7 @@ namespace DPA_Musicsheets.Interfaces
     interface ICommand
     {
         string pattern { get; }
+        string commandName { get; }
         void execute();
     }
 }

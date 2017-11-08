@@ -33,7 +33,6 @@ namespace DPA_Musicsheets.States
             //Commands.Add(new InsertTime3_4Command(controller));
             //Commands.Add(new InsertTime6_8Command(controller));
             
-
             Commands.Add(new OpenFileCommand(fileHandler));
             Commands.Add(new SaveAsPDFCommand(fileHandler));
             Commands.Add(new SaveAsLilypondCommand(fileHandler));
@@ -43,13 +42,12 @@ namespace DPA_Musicsheets.States
         {
             foreach (ICommand command in Commands)
             {
-                if (keys.Contains(command.pattern))
+                if (keys.Contains(command.pattern) || keys.Contains(command.commandName))
                 {
                     ExecutableCommand = command;
                     return true;
-                }
+                } 
             }
-
             return false;
         }
 

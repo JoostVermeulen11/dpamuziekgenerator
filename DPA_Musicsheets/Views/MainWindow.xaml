@@ -19,7 +19,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="350" />
+            <ColumnDefinition Width="375" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <i:Interaction.Triggers>

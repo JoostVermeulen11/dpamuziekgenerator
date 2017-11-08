@@ -40,9 +40,10 @@ namespace DPA_Musicsheets.Saving.Savers
                     FileName = lilypondLocation
                 }
             };
+
             process.Start();
             process.WaitForExit();
-            File.Delete(sourcefile + tempArr[tempArr.Length - 1]);
+            File.Delete(sourcefile + tempArr[tempArr.Length - 1] + ".ly");
         }      
     }
 }

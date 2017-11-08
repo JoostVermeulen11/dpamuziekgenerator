@@ -25,6 +25,14 @@ namespace DPA_Musicsheets.Commands
             }
         }
 
+        public string commandName
+        {
+            get
+            {
+                return "Pdf";
+            }
+        }
+
         public void execute()
         {
             fileHandler.SaveFile("pdf");
