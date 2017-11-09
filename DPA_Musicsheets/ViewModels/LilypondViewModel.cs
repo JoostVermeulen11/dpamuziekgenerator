@@ -23,6 +23,17 @@ namespace DPA_Musicsheets.ViewModels
         private string _nextText;
         private bool _IsEditingEnabled;
         private string _EditButtonContent;
+        private bool _SaveMethodSelected = false;
+
+        public bool SaveMethodSelected
+        {
+            get { return _SaveMethodSelected; }
+            set
+            {
+                _SaveMethodSelected = value;
+                RaisePropertyChanged(() => SaveMethodSelected);
+            }
+        }
 
         public string EditButtonContent
         {
@@ -76,6 +87,7 @@ namespace DPA_Musicsheets.ViewModels
             {
                 if (_saveMethod == value) return;
                 _saveMethod = value;
+                SaveMethodSelected = true;
                 RaisePropertyChanged(() => SaveMethod);
             }
         }

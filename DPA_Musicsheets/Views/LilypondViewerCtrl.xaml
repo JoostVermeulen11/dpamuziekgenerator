@@ -20,7 +20,7 @@
             <Button Command="{Binding EditStateCommand}" Content="{Binding EditButtonContent}" Height="25" Margin="5,5,5,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="81"/>
             <ComboBox Width="85" Height="25" ItemsSource="{Binding Path=SaveMethods}" SelectedValue="{Binding Path=SaveMethod}" />
 
-            <Button Command="{Binding SaveAsCommand}" Height="25" IsEnabled="{Binding IsEditingEnabled}" Content="Save as..." Margin="5,5,5,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="70" RenderTransformOrigin="1.15,0.85"/>
+            <Button Command="{Binding SaveAsCommand}" Height="25" IsEnabled="{Binding SaveMethodSelected}" Content="Save as..." Margin="5,5,5,0" HorizontalAlignment="Left" VerticalAlignment="Top" Width="70" RenderTransformOrigin="1.15,0.85"/>
         </StackPanel>
         <TextBox TextWrapping="Wrap" AcceptsReturn="True" VerticalScrollBarVisibility="Auto" 
             VerticalAlignment="Stretch" IsEnabled="{Binding IsEditingEnabled}" Text="{Binding LilypondText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Padding="5"
