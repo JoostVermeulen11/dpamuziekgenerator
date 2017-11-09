@@ -26,13 +26,11 @@ namespace DPA_Musicsheets.States
 
             fileHandler.SetEditText(fileHandler.GetFileName());
 
-            //Commands.Add(new InsertBarLinesCommand(controller));
-            //Commands.Add(new InsertClefCommand(controller));
-            //Commands.Add(new InsertTempoCommand(controller));
-            //Commands.Add(new InsertTimeCommand(controller));
-            //Commands.Add(new InsertTime3_4Command(controller));
-            //Commands.Add(new InsertTime6_8Command(controller));
-            
+            Commands.Add(new InsertTime34Command(fileHandler));
+            Commands.Add(new InsertTime44Command(fileHandler));
+            Commands.Add(new InsertTime68Command(fileHandler));
+            Commands.Add(new InsertTempoCommand(fileHandler));
+            Commands.Add(new InsertClefCommand(fileHandler));
             Commands.Add(new OpenFileCommand(fileHandler));
             Commands.Add(new SaveAsPDFCommand(fileHandler));
             Commands.Add(new SaveAsLilypondCommand(fileHandler));

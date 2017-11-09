@@ -18,7 +18,6 @@ namespace DPA_Musicsheets.ViewModels
 {
     class MainViewModel : ViewModelBase
     {
-        //List<Key> _pressedKeys;
         bool hasSaved = true;
         private string _fileName;
         public string FileName
@@ -33,8 +32,6 @@ namespace DPA_Musicsheets.ViewModels
                 RaisePropertyChanged(() => FileName);
             }
         }
-
-        //private string keyCombination;
 
         private string _currentState;
         public string CurrentState
@@ -61,66 +58,77 @@ namespace DPA_Musicsheets.ViewModels
             };
 
             MessengerInstance.Register<CurrentStateMessage>(this, (message) => CurrentState = message.State);
-           // _pressedKeys = new List<Key>();
-           // keyCombination = "";
         }
 
         public ICommand OpenFileCommand => new RelayCommand(() =>
         {
-            _fileHandler.OpenFile();              
+            _fileHandler.OpenFile();
         });
 
         public ICommand LoadCommand => new RelayCommand(() =>
         {
             _fileHandler.ConvertFile(FileName);
         });
-        
+
         public ICommand OnLostFocusCommand => new RelayCommand(() =>
         {
-            
+
             Console.WriteLine("Maingrid Lost focus");
         });
 
         public ICommand OnKeyDownCommand => new RelayCommand<KeyEventArgs>((e) =>
-        {            
-            //Key key = (e.Key == Key.System ? e.SystemKey : e.Key);
-            //if (!_pressedKeys.Contains(key))
-            //    _pressedKeys.Add(key);
-
-            //AddKeys();
-            //e.Handled = true;
+        {
+            string commandString = "";
+            if (Keyboard.Modifiers == ModifierKeys.Control)
+            {
+                if (Keyboard.IsKeyDown(Key.S))
+                {
+                    if (Keyboard.IsKeyDown(Key.P))
+                        commandString = "LeftCtrlSP";
+                    else
+                        commandString = "LeftCtrlS";
+                }
+                if (Keyboard.IsKeyDown(Key.O))
+                    commandString = "LeftCtrlO";
+            }
+            if (Keyboard.Modifiers == ModifierKeys.Alt)                
+            {
+                if (Keyboard.IsKeyDown(Key.C))
+                    commandString = "LeftAltC";
+                if (Keyboard.IsKeyDown(Key.S))
+                    commandString = "LeftAltS";
+                if (Keyboard.IsKeyDown(Key.T))
+                {
+                    if (Keyboard.IsKeyDown(Key.D4) || Keyboard.IsKeyDown(Key.NumPad4))
+                        commandString = "LeftAltT4";              
+                    if (Keyboard.IsKeyDown(Key.D3) || Keyboard.IsKeyDown(Key.NumPad3))
+                        commandString = "LeftAltT3";
+                    else if (Keyboard.IsKeyDown(Key.D6) || Keyboard.IsKeyDown(Key.NumPad6))
+                        commandString = "LeftAltT6";
+                    else
+                        commandString = "LeftAltT";
+                }
+            }   
+            if (commandString != "")
+                _fileHandler.TryExecuteCommand(commandString);
         });
-        
+
         public ICommand OnKeyUpCommand => new RelayCommand<KeyEventArgs>((e) =>
         {
-            //_pressedKeys.Remove(e.Key);
-            //AddKeys();
-            //e.Handled = true;            
-            //executeCommand(keyCombination);
-            //keyCombination = "";
+           
         });
 
         private void executeCommand(string command)
-        {      
+        {
             this._fileHandler.TryExecuteCommand(command);
 
-        }
-
-        private void AddKeys()
-        {
-            //foreach (Key key in _pressedKeys)
-            //{              
-            //    if (keyCombination != key.ToString())
-            //        keyCombination += key.ToString();
-            //}
-            //_pressedKeys.Clear();         
         }
 
         public ICommand OnWindowClosingCommand => new RelayCommand<System.ComponentModel.CancelEventArgs>((e) =>
         {
             //als de hasSaved false is, vragen of hij op wilt slaan
             if (!hasSaved)
-            {          
+            {
                 MessageBoxResult result = MessageBox.Show("Do you want to quit without saving?", "Closing application", MessageBoxButton.YesNo);
 
                 // End session, if specified

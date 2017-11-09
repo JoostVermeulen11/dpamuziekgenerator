@@ -117,6 +117,11 @@
     <Compile Include="classes\StaffDrawer.cs" />
     <Compile Include="classes\Tempo.cs" />
     <Compile Include="classes\TimeSignature.cs" />
+    <Compile Include="Commands\InsertClefCommand.cs" />
+    <Compile Include="Commands\InsertTempoCommand.cs" />
+    <Compile Include="Commands\InsertTime34Command.cs" />
+    <Compile Include="Commands\InsertTime44Command.cs" />
+    <Compile Include="Commands\InsertTime68Command.cs" />
     <Compile Include="Commands\OpenFileCommand.cs" />
     <Compile Include="Commands\SaveAsLilypondCommand.cs" />
     <Compile Include="Commands\SaveAsPDFCommand.cs" />
