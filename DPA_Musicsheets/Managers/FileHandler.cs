@@ -31,6 +31,7 @@ namespace DPA_Musicsheets.Managers
             set
             {
                 _editorText = value;
+                FileSavedChanged?.Invoke(this, new FileSavedEventArgs() { HasSaved = false });
                 EditorTextChanged?.Invoke(this, new TextEventArgs() { Text = value });
             }
         }
@@ -57,17 +58,13 @@ namespace DPA_Musicsheets.Managers
         // tot hier
 
         public List<MusicalSymbol> WPFStaffs { get; set; } = new List<MusicalSymbol>();
-        private static List<Char> notesorder = new List<Char> { 'c', 'd', 'e', 'f', 'g', 'a', 'b' };
-
         public FileHandler()
         {
             CurrentState = new PlayState(this);
             noteObservers = new List<INoteObserver>();
             drawer = new StaffDrawer(WPFStaffs);
             this.attachObserver(drawer);
-            memento = new Memento.Memento(this);
-            
-            
+            memento = new Memento.Memento(this);          
         }
 
         public event EventHandler<TextEventArgs> EditorTextChanged;
@@ -75,6 +72,7 @@ namespace DPA_Musicsheets.Managers
         public event EventHandler<SequenceEventArgs> SequenceChanged;
         public event EventHandler<FilenameEventArgs> FilenameChanged;
         public event EventHandler<CurrentStateEventArgs> StateChanged;
+        public event EventHandler<FileSavedEventArgs> FileSavedChanged;
 
         public void OpenFile()
         {
@@ -124,7 +122,7 @@ namespace DPA_Musicsheets.Managers
             if (dialog.FileName != "")
             {
                 save(fileFormat, dialog.FileName);
-                //HasSaved = true;
+                FileSavedChanged?.Invoke(this, new FileSavedEventArgs() { HasSaved = true });  
             }
         }
 

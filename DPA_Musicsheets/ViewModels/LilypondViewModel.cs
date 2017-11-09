@@ -147,6 +147,7 @@ namespace DPA_Musicsheets.ViewModels
 
         public RelayCommand UndoCommand => new RelayCommand(() =>
         {
+            _fileHandler.memento.Back();
             _nextText = LilypondText;
             LilypondText = _previousText;
             _previousText = null;
@@ -154,32 +155,17 @@ namespace DPA_Musicsheets.ViewModels
 
         public RelayCommand RedoCommand => new RelayCommand(() =>
         {
+            _fileHandler.memento.Forward();
             _previousText = LilypondText;
             LilypondText = _nextText;
             _nextText = null;
-            RedoCommand.RaiseCanExecuteChanged();
+            //RedoCommand.RaiseCanExecuteChanged();
         }, () => _nextText != LilypondText);
 
         public ICommand SaveAsCommand => new RelayCommand(() =>
         {
             this._fileHandler.TryExecuteCommand(SaveMethod);
-            //SaveFileDialog saveFileDialog = new SaveFileDialog() { Filter = "Midi|*.mid|Lilypond|*.ly|PDF|*.pdf" };
-            //if (saveFileDialog.ShowDialog() == true)
-            //{
-            //    string extension = Path.GetExtension(saveFileDialog.FileName);
-            //    if (extension.EndsWith(".mid"))
-            //    {
-            //        // _fileHandler.SaveToMidi(saveFileDialog.FileName);
-            //    }
-            //    else if (extension.EndsWith(".ly"))
-            //    {
-            //        this._fileHandler.TryExecuteCommand("LeftCtrlS");
-            //    }
-            //    else if (extension.EndsWith(".pdf"))
-            //    {
-            //        this._fileHandler.TryExecuteCommand("LeftCtrlSP");
-            //    }
-            //}
+            
         });
 
         public ICommand EditStateCommand => new RelayCommand(() =>

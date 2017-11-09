@@ -127,6 +127,7 @@
     <Compile Include="enums\StateType.cs" />
     <Compile Include="enums\TieType.cs" />
     <Compile Include="EventArgs\CurrentStateEventArgs.cs" />
+    <Compile Include="EventArgs\FileSavedEventArgs.cs" />
     <Compile Include="Factories\ReaderFactory.cs" />
     <Compile Include="Interfaces\ICommand.cs" />
     <Compile Include="Interfaces\IExpression.cs" />

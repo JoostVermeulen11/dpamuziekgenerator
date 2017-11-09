@@ -19,7 +19,7 @@ namespace DPA_Musicsheets.ViewModels
     class MainViewModel : ViewModelBase
     {
         //List<Key> _pressedKeys;
-
+        bool hasSaved = true;
         private string _fileName;
         public string FileName
         {
@@ -55,6 +55,11 @@ namespace DPA_Musicsheets.ViewModels
                 FileName = args.Filename;
             };
 
+            _fileHandler.FileSavedChanged += (src, args) =>
+            {
+                hasSaved = args.HasSaved;
+            };
+
             MessengerInstance.Register<CurrentStateMessage>(this, (message) => CurrentState = message.State);
            // _pressedKeys = new List<Key>();
            // keyCombination = "";
@@ -72,6 +77,7 @@ namespace DPA_Musicsheets.ViewModels
         
         public ICommand OnLostFocusCommand => new RelayCommand(() =>
         {
+            
             Console.WriteLine("Maingrid Lost focus");
         });
 
@@ -97,6 +103,7 @@ namespace DPA_Musicsheets.ViewModels
         private void executeCommand(string command)
         {      
             this._fileHandler.TryExecuteCommand(command);
+
         }
 
         private void AddKeys()
@@ -109,8 +116,20 @@ namespace DPA_Musicsheets.ViewModels
             //_pressedKeys.Clear();         
         }
 
-        public ICommand OnWindowClosingCommand => new RelayCommand(() =>
+        public ICommand OnWindowClosingCommand => new RelayCommand<System.ComponentModel.CancelEventArgs>((e) =>
         {
+            //als de hasSaved false is, vragen of hij op wilt slaan
+            if (!hasSaved)
+            {          
+                MessageBoxResult result = MessageBox.Show("Do you want to quit without saving?", "Closing application", MessageBoxButton.YesNo);
+
+                // End session, if specified
+                if (result == MessageBoxResult.No)
+                {
+                    e.Cancel = true;
+                }
+            }
+
             ViewModelLocator.Cleanup();
         });
     }
