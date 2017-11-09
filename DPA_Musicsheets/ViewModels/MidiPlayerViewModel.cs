@@ -130,7 +130,7 @@ namespace DPA_Musicsheets.ViewModels
 
         public override void Cleanup()
         {
-            base.Cleanup();
+            //base.Cleanup();
 
             _sequencer.Stop();
             _sequencer.Dispose();

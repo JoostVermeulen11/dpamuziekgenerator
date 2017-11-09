@@ -31,7 +31,9 @@ namespace DPA_Musicsheets.Managers
             set
             {
                 _editorText = value;
-                FileSavedChanged?.Invoke(this, new FileSavedEventArgs() { HasSaved = false });
+                if (CurrentState.getEditString().Equals("Edit"))
+                    FileSavedChanged?.Invoke(this, new FileSavedEventArgs() { HasSaved = false });
+
                 EditorTextChanged?.Invoke(this, new TextEventArgs() { Text = value });
             }
         }

@@ -164,8 +164,7 @@ namespace DPA_Musicsheets.ViewModels
 
         public ICommand SaveAsCommand => new RelayCommand(() =>
         {
-            this._fileHandler.TryExecuteCommand(SaveMethod);
-            
+            this._fileHandler.TryExecuteCommand(SaveMethod);    
         });
 
         public ICommand EditStateCommand => new RelayCommand(() =>
