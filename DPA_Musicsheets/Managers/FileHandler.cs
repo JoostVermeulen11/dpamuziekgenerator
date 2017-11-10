@@ -56,6 +56,7 @@ namespace DPA_Musicsheets.Managers
         private StaffDrawer drawer;
         public IState CurrentState { get; set; }
         public Memento.Memento memento { get; set; }
+        public int CursorLocation { get; set; }
         private string fileName;
         // tot hier
 
@@ -158,6 +159,14 @@ namespace DPA_Musicsheets.Managers
                 noteObservers[i].update(musicSheet);
             }
         }    
+
+        public void InsertIntoSheet(int position, string data)
+        {
+            //insert string->data at int->position 
+            EditorText = EditorText.Insert(position, data);
+
+            RedrawStaff();
+        }
         
         public void RedrawStaff()
         {

@@ -24,6 +24,17 @@ namespace DPA_Musicsheets.ViewModels
         private bool _IsEditingEnabled;
         private string _EditButtonContent;
         private bool _SaveMethodSelected = false;
+        private int _CursorLocation = 0;
+
+        public int CursorLocation
+        {
+            get { return _CursorLocation; }
+            set
+            {
+                _CursorLocation = value;
+                RaisePropertyChanged(() => CursorLocation);
+            }
+        }
 
         public bool SaveMethodSelected
         {
@@ -155,6 +166,13 @@ namespace DPA_Musicsheets.ViewModels
                     }
                 }, TaskScheduler.FromCurrentSynchronizationContext()); // Request from main thread.
             }
+        });
+
+        public ICommand SelectionChangedCommand => new RelayCommand<RoutedEventArgs>((args) =>
+        {
+            int currentSelection = (args.OriginalSource as System.Windows.Controls.TextBox).SelectionStart;
+            _fileHandler.CursorLocation = currentSelection;
+            Console.WriteLine("SelectionChanged: " + currentSelection.ToString());
         });
 
         public RelayCommand UndoCommand => new RelayCommand(() =>

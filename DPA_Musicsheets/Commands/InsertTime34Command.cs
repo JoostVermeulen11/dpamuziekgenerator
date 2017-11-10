@@ -35,7 +35,7 @@ namespace DPA_Musicsheets.Commands
 
         public void execute()
         {
-            // still need to implement
+            fileHandler.InsertIntoSheet(fileHandler.CursorLocation, "\\time 3/4 ");
         }
     }
 }
