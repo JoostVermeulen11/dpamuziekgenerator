@@ -48,8 +48,7 @@ namespace DPA_Musicsheets.Managers
                 StateChanged?.Invoke(this, new CurrentStateEventArgs() { State = value });
             }
         }
-
-        //zelf erbij gezet
+        
         private IInputReader inputReader;
         private MusicSheet musicSheet;    
         private List<INoteObserver> noteObservers;
@@ -58,9 +57,15 @@ namespace DPA_Musicsheets.Managers
         public Memento.Memento memento { get; set; }
         public int CursorLocation { get; set; }
         private string fileName;
-        // tot hier
-
         public List<MusicalSymbol> WPFStaffs { get; set; } = new List<MusicalSymbol>();
+        
+        public event EventHandler<TextEventArgs> EditorTextChanged;
+        public event EventHandler<WPFStaffsEventArgs> WPFStaffsChanged;
+        public event EventHandler<SequenceEventArgs> SequenceChanged;
+        public event EventHandler<FilenameEventArgs> FilenameChanged;
+        public event EventHandler<CurrentStateEventArgs> StateChanged;
+        public event EventHandler<FileSavedEventArgs> FileSavedChanged;
+
         public FileHandler()
         {
             CurrentState = new PlayState(this);
@@ -69,14 +74,7 @@ namespace DPA_Musicsheets.Managers
             this.attachObserver(drawer);
             memento = new Memento.Memento(this);          
         }
-
-        public event EventHandler<TextEventArgs> EditorTextChanged;
-        public event EventHandler<WPFStaffsEventArgs> WPFStaffsChanged;
-        public event EventHandler<SequenceEventArgs> SequenceChanged;
-        public event EventHandler<FilenameEventArgs> FilenameChanged;
-        public event EventHandler<CurrentStateEventArgs> StateChanged;
-        public event EventHandler<FileSavedEventArgs> FileSavedChanged;
-
+        
         public void OpenFile()
         {
             //reset the box
@@ -162,9 +160,7 @@ namespace DPA_Musicsheets.Managers
 
         public void InsertIntoSheet(int position, string data)
         {
-            //insert string->data at int->position 
             EditorText = EditorText.Insert(position, data);
-
             RedrawStaff();
         }
         
