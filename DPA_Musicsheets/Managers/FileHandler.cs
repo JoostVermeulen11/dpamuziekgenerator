@@ -103,7 +103,6 @@ namespace DPA_Musicsheets.Managers
             notifyAll();
                            
             WPFStaffsChanged?.Invoke(this, new WPFStaffsEventArgs() { Symbols = WPFStaffs, Message = "" });
-
             SequenceChanged?.Invoke(this, new SequenceEventArgs() { PlayableSequence = drawer.PlayableSequence });
         }
 
