@@ -34,7 +34,7 @@ namespace DPA_Musicsheets.States
         {
             foreach (ICommand command in Commands)
             {
-                if (keys.Contains(command.pattern))
+                if (keys.Contains(command.pattern) || keys.Contains(command.commandName))
                 {
                     ExecutableCommand = command;                  
                     return true;

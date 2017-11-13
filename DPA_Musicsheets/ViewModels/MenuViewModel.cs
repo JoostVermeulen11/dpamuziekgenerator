@@ -19,17 +19,7 @@ namespace DPA_Musicsheets.ViewModels
 
         public MenuViewModel(FileHandler _fileHandler)
         {
-            this._fileHandler = _fileHandler;
-
-            MenuButtonCommand = new RelayCommand<object>(ExecuteMenuButtonCommand);
-        }
-
-        private void ExecuteMenuButtonCommand(object obj)
-        {
-            if (obj.ToString().Equals("exit"))
-            {
-                Application.Current.MainWindow.Close();
-            }
+            this._fileHandler = _fileHandler;          
         }
     }
 }

@@ -57,6 +57,7 @@ namespace DPA_Musicsheets.ViewModels
                 hasSaved = args.HasSaved;
             };
 
+
             MessengerInstance.Register<CurrentStateMessage>(this, (message) => CurrentState = message.State);
         }
 
@@ -91,7 +92,7 @@ namespace DPA_Musicsheets.ViewModels
                 if (Keyboard.IsKeyDown(Key.O))
                     commandString = "LeftCtrlO";
             }
-            if (Keyboard.Modifiers == ModifierKeys.Alt)                
+            if (Keyboard.Modifiers == ModifierKeys.Alt)
             {
                 if (Keyboard.IsKeyDown(Key.C))
                     commandString = "LeftAltC";
@@ -100,7 +101,7 @@ namespace DPA_Musicsheets.ViewModels
                 if (Keyboard.IsKeyDown(Key.T))
                 {
                     if (Keyboard.IsKeyDown(Key.D4) || Keyboard.IsKeyDown(Key.NumPad4))
-                        commandString = "LeftAltT4";              
+                        commandString = "LeftAltT4";
                     if (Keyboard.IsKeyDown(Key.D3) || Keyboard.IsKeyDown(Key.NumPad3))
                         commandString = "LeftAltT3";
                     else if (Keyboard.IsKeyDown(Key.D6) || Keyboard.IsKeyDown(Key.NumPad6))
@@ -108,37 +109,58 @@ namespace DPA_Musicsheets.ViewModels
                     else
                         commandString = "LeftAltT";
                 }
-            }   
+            }
             if (commandString != "")
                 _fileHandler.TryExecuteCommand(commandString);
         });
 
         public ICommand OnKeyUpCommand => new RelayCommand<KeyEventArgs>((e) =>
         {
-           
+            
+        });
+
+        public ICommand ExecuteCommand => new RelayCommand<object>((object obj) =>
+        {
+            if (obj.ToString().Equals("exit"))
+            {
+                if (!hasSaved)
+                {
+                    MessageBoxResult result = MessageBox.Show("Do you want to quit without saving?", "Closing application", MessageBoxButton.YesNo);
+
+                    // End session, if specified
+                    if (result == MessageBoxResult.No)
+                    {
+                        return;
+                    }
+                }
+
+                ViewModelLocator.Cleanup();
+                Application.Current.MainWindow.Close();
+            }
+
+            executeCommand(obj.ToString());
         });
 
         private void executeCommand(string command)
         {
             this._fileHandler.TryExecuteCommand(command);
-
         }
 
         public ICommand OnWindowClosingCommand => new RelayCommand<System.ComponentModel.CancelEventArgs>((e) =>
         {
-            //als de hasSaved false is, vragen of hij op wilt slaan
-            if (!hasSaved)
-            {
-                MessageBoxResult result = MessageBox.Show("Do you want to quit without saving?", "Closing application", MessageBoxButton.YesNo);
+            ////als de hasSaved false is, vragen of hij op wilt slaan
+            //if (!hasSaved)
+            //{
+            //    MessageBoxResult result = MessageBox.Show("Do you want to quit without saving?", "Closing application", MessageBoxButton.YesNo);
 
-                // End session, if specified
-                if (result == MessageBoxResult.No)
-                {
-                    e.Cancel = true;
-                }
-            }
+            //    // End session, if specified
+            //    if (result == MessageBoxResult.No)
+            //    {
+            //        e.Cancel = true;
+            //    }
+            //}
 
-            ViewModelLocator.Cleanup();
+            //ViewModelLocator.Cleanup();
         });
     }
 }
