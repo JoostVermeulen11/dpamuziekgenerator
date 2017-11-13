@@ -163,6 +163,8 @@ namespace DPA_Musicsheets.ViewModels
 
                         _fileHandler.EditorText = LilypondText;
                         _fileHandler.memento.NewNode(LilypondText);
+                        //_fileHandler.Originator.setState(LilypondText);
+                        //_fileHandler.CareTaker.add(_fileHandler.Originator.saveStateToMemento());
                     }
                 }, TaskScheduler.FromCurrentSynchronizationContext()); // Request from main thread.
             }
@@ -178,19 +180,20 @@ namespace DPA_Musicsheets.ViewModels
         public RelayCommand UndoCommand => new RelayCommand(() =>
         {
             _fileHandler.memento.Back();
-            _nextText = LilypondText;
-            LilypondText = _previousText;
-            _previousText = null;
-        }, () => _previousText != LilypondText);
+            //_fileHandler.CareTaker.remove();
+            //_nextText = LilypondText;
+            //LilypondText = _previousText;
+            //_previousText = null;
+        });
 
         public RelayCommand RedoCommand => new RelayCommand(() =>
         {
             _fileHandler.memento.Forward();
-            _previousText = LilypondText;
-            LilypondText = _nextText;
-            _nextText = null;
-            //RedoCommand.RaiseCanExecuteChanged();
-        }, () => _nextText != LilypondText);
+            //_previousText = LilypondText;
+            //LilypondText = _nextText;
+            //_nextText = null;
+            RedoCommand.RaiseCanExecuteChanged();
+        });
 
         public ICommand SaveAsCommand => new RelayCommand(() =>
         {

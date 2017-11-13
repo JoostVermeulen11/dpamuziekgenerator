@@ -4,6 +4,7 @@ using DPA_Musicsheets.EventArgs;
 using DPA_Musicsheets.Factories;
 using DPA_Musicsheets.Interfaces;
 using DPA_Musicsheets.Lilypond;
+using DPA_Musicsheets.Memento;
 using DPA_Musicsheets.Models;
 using DPA_Musicsheets.Saving;
 using DPA_Musicsheets.States;
@@ -55,6 +56,9 @@ namespace DPA_Musicsheets.Managers
         private StaffDrawer drawer;
         public IState CurrentState { get; set; }
         public Memento.Memento memento { get; set; }
+
+        public Originator Originator { get; set; }
+        public CareTaker CareTaker { get; set; }
         public int CursorLocation { get; set; }
         private string fileName;
         public List<MusicalSymbol> WPFStaffs { get; set; } = new List<MusicalSymbol>();
@@ -72,7 +76,9 @@ namespace DPA_Musicsheets.Managers
             noteObservers = new List<INoteObserver>();
             drawer = new StaffDrawer(WPFStaffs);
             this.attachObserver(drawer);
-            memento = new Memento.Memento(this);          
+            memento = new Memento.Memento(this);
+            CareTaker = new CareTaker();
+            Originator = new Originator();
         }
         
         public void OpenFile()
@@ -88,6 +94,7 @@ namespace DPA_Musicsheets.Managers
             {
                 ConvertFile(openFileDialog.FileName);
                 FilenameChanged?.Invoke(this, new FilenameEventArgs() { Filename = openFileDialog.FileName });
+                
                 fileName = openFileDialog.FileName;
             }
         }
@@ -112,6 +119,7 @@ namespace DPA_Musicsheets.Managers
                 return;
 
             EditorText = inputReader.GetText(fileName);
+            memento.NewNode(EditorText);
         }
 
         public void SaveFile(string fileFormat)

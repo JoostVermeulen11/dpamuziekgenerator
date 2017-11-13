@@ -42,7 +42,7 @@ namespace DPA_Musicsheets.Memento
             if (Current != Root && Root != null)
             {
                 Current = Current.Last;
-                fileHandler.EditorText = Current.EditString;
+                fileHandler.EditorText = Current.EditText;
                 fileHandler.RedrawStaff();
             }
         }
@@ -52,7 +52,7 @@ namespace DPA_Musicsheets.Memento
             if (Current != Last && Root != null)
             {
                 Current = Current.Next;
-                fileHandler.EditorText = Current.EditString;
+                fileHandler.EditorText = Current.EditText;
                 //fileHandler.SetEditText(Current.EditString);
                 fileHandler.RedrawStaff();
             }

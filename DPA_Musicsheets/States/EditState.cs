@@ -25,7 +25,8 @@ namespace DPA_Musicsheets.States
             Commands = new List<ICommand>();
 
             fileHandler.SetEditText(fileHandler.GetFileName());
-
+          
+            
             Commands.Add(new InsertTime34Command(fileHandler));
             Commands.Add(new InsertTime44Command(fileHandler));
             Commands.Add(new InsertTime68Command(fileHandler));

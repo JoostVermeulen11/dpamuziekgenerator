@@ -10,11 +10,11 @@ namespace DPA_Musicsheets.Memento
     {
         public Node Last { get; set; }
         public Node Next { get; set; }
-        public string EditString { get; set; }
+        public string EditText { get; set; }
 
         public Node(string EditText)
         {
-            EditString = EditText;
+            this.EditText = EditText;
         }
     }
 }
