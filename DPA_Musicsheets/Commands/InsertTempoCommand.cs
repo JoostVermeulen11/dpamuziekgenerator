@@ -29,7 +29,7 @@ namespace DPA_Musicsheets.Commands
         {
             get
             {
-                return "LeftAltS";
+                return "insertTempo";
             }
         }
 

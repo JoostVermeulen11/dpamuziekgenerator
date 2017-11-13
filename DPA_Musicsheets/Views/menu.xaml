@@ -11,18 +11,18 @@
              HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
     <Menu DockPanel.Dock="Top" Background="White">
         <MenuItem Header="_File">
-            <MenuItem Header="_Open" />
-            <MenuItem Header="_Save lilypond" />
-            <MenuItem Header="_Save pdf" />
+            <MenuItem Header="_Open" Command="{Binding MenuButtonCommand}" CommandParameter="OpenPDF" />
+            <MenuItem Header="_Save lilypond" Command="{Binding MenuButtonCommand}" CommandParameter="Lilypond"/>
+            <MenuItem Header="_Save pdf" Command="{Binding MenuButtonCommand}" CommandParameter="Pdf"/>
             <Separator />
-            <MenuItem Header="_Exit" />
+            <MenuItem Header="_Exit" Command="{Binding MenuButtonCommand}" CommandParameter="exit"/>
         </MenuItem>
         <MenuItem Header="_Insert">
-            <MenuItem Header="_Insert clef" />
-            <MenuItem Header="_Insert tempo 4=120" />
-            <MenuItem Header="_Insert time 4/4" />
-            <MenuItem Header="_Insert time 3/4" />
-            <MenuItem Header="_Insert time 6/8" />
+            <MenuItem Header="_Insert clef" Command="{Binding MenuButtonCommand}" CommandParameter="insertClef"/>
+            <MenuItem Header="_Insert tempo 4=120" Command="{Binding MenuButtonCommand}" CommandParameter="insertTempo"/>
+            <MenuItem Header="_Insert time 4/4" Command="{Binding MenuButtonCommand}" CommandParameter="insertTime44"/>
+            <MenuItem Header="_Insert time 3/4" Command="{Binding MenuButtonCommand}" CommandParameter="insertTime34"/>
+            <MenuItem Header="_Insert time 6/8" Command="{Binding MenuButtonCommand}" CommandParameter="insertTime68"/>
         </MenuItem>
     </Menu>
 </UserControl>
