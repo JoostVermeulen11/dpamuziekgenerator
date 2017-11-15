@@ -159,8 +159,7 @@ namespace DPA_Musicsheets.ViewModels
                     if ((DateTime.Now - _lastChange).TotalMilliseconds >= MILLISECONDS_BEFORE_CHANGE_HANDLED)
                     {
                         _waitingForRender = false;
-                        UndoCommand.RaiseCanExecuteChanged();
-
+                    
                         _fileHandler.EditorText = LilypondText;
                         _fileHandler.memento.NewNode(LilypondText);
                         //_fileHandler.Originator.setState(LilypondText);
@@ -180,19 +179,11 @@ namespace DPA_Musicsheets.ViewModels
         public RelayCommand UndoCommand => new RelayCommand(() =>
         {
             _fileHandler.memento.Back();
-            //_fileHandler.CareTaker.remove();
-            //_nextText = LilypondText;
-            //LilypondText = _previousText;
-            //_previousText = null;
         });
 
         public RelayCommand RedoCommand => new RelayCommand(() =>
         {
             _fileHandler.memento.Forward();
-            //_previousText = LilypondText;
-            //LilypondText = _nextText;
-            //_nextText = null;
-            RedoCommand.RaiseCanExecuteChanged();
         });
 
         public ICommand SaveAsCommand => new RelayCommand(() =>

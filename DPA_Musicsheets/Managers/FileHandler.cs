@@ -57,8 +57,6 @@ namespace DPA_Musicsheets.Managers
         public IState CurrentState { get; set; }
         public Memento.Memento memento { get; set; }
 
-        public Originator Originator { get; set; }
-        public CareTaker CareTaker { get; set; }
         public int CursorLocation { get; set; }
         private string fileName;
         public List<MusicalSymbol> WPFStaffs { get; set; } = new List<MusicalSymbol>();
@@ -77,8 +75,6 @@ namespace DPA_Musicsheets.Managers
             drawer = new StaffDrawer(WPFStaffs);
             this.attachObserver(drawer);
             memento = new Memento.Memento(this);
-            CareTaker = new CareTaker();
-            Originator = new Originator();
         }
         
         public void OpenFile()

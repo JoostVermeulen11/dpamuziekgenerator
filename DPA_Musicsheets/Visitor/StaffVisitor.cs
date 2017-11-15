@@ -15,7 +15,6 @@ namespace DPA_Musicsheets.Visitor
     {        
         ClefAdapter clefAdapter;
         NootAdapter nootAdapter;
-        List<MusicalSymbol> symbols;
         List<MusicalSymbol> staff;
 
         public StaffVisitor(List<MusicalSymbol> staff)
@@ -23,39 +22,32 @@ namespace DPA_Musicsheets.Visitor
             this.staff = staff;
             clefAdapter = new ClefAdapter();
             nootAdapter = new NootAdapter();
-            symbols = new List<MusicalSymbol>();
         }
 
         public void updateStaff()
-        {         
-            symbols.Clear();
-
+        {
             MusicalSymbol symbol = clefAdapter.ModelToLibrary(new DPA_Musicsheets.classes.Clef());
             staff.Add(symbol);
-            symbols.Add(symbol);
         }
 
         public void visit(DPA_Musicsheets.classes.Note noot)
         {
             MusicalSymbol symbol = nootAdapter.NootModelToLibrary(noot);
             staff.Add(symbol);
-            symbols.Add(symbol);
         }
 
         public void visit(RustNote rustNode)
         {
             MusicalSymbol symbol = nootAdapter.RestModelToLibrary(rustNode);
             staff.Add(symbol);
-            symbols.Add(symbol);
         }
 
         public void visit(DPA_Musicsheets.classes.Clef clef)
         {
-            if(symbols.First().Type != MusicalSymbolType.Clef)
+            if(staff.First().Type != MusicalSymbolType.Clef)
             {
                 MusicalSymbol symbol = clefAdapter.ModelToLibrary(clef);
                 staff.Add(symbol);
-                symbols.Add(symbol);
             }
         }
 
@@ -63,18 +55,16 @@ namespace DPA_Musicsheets.Visitor
         {
             MusicalSymbol symbol = new PSAMControlLibrary.TimeSignature(TimeSignatureType.Numbers, Convert.ToUInt32(timeSignature.timeSignature[0]), Convert.ToUInt32(timeSignature.timeSignature[1]));
             staff.Add(symbol);
-            symbols.Add(symbol);
         }
 
         public void visit(MaatStreep rustnote)
         {
-            symbols.Add(new Barline());
             staff.Add(new Barline());
         }
 
         public void visit(Tempo tempo)
         {
-            //niet ondersteund door de gebruikte library
+            
         }
 
         public void visit(Repeater repeater)
@@ -91,13 +81,12 @@ namespace DPA_Musicsheets.Visitor
             Barline b = new Barline();
             b.RepeatSign = RepeatSignType.Backward;
 
-            symbols.Add(b);
             staff.Add(b);
         }
 
         public List<MusicalSymbol> getSymbolList()
         {
-            return symbols;
+            return staff;
         }
     }
 }
