@@ -162,8 +162,7 @@ namespace DPA_Musicsheets.ViewModels
                     
                         _fileHandler.EditorText = LilypondText;
                         _fileHandler.memento.NewNode(LilypondText);
-                        //_fileHandler.Originator.setState(LilypondText);
-                        //_fileHandler.CareTaker.add(_fileHandler.Originator.saveStateToMemento());
+                        _fileHandler.memento.canBackward = true;
                     }
                 }, TaskScheduler.FromCurrentSynchronizationContext()); // Request from main thread.
             }
@@ -177,13 +176,20 @@ namespace DPA_Musicsheets.ViewModels
         });
 
         public RelayCommand UndoCommand => new RelayCommand(() =>
-        {
-            _fileHandler.memento.Back();
+        {            
+           if (_fileHandler.memento.CanBackward())
+            {
+                _fileHandler.memento.Back();
+                _fileHandler.memento.canForward = true;
+            }          
         });
 
         public RelayCommand RedoCommand => new RelayCommand(() =>
         {
-            _fileHandler.memento.Forward();
+            if (_fileHandler.memento.CanForward())
+            {
+                _fileHandler.memento.Forward();
+            }            
         });
 
         public ICommand SaveAsCommand => new RelayCommand(() =>

@@ -13,6 +13,7 @@ namespace DPA_Musicsheets.Memento
         Node Root { get; set; }
         Node Current { get; set; }
         Node Last { get; set; }
+        public bool canForward, canBackward = false;
 
         public Memento(FileHandler fileHandler)
         {
@@ -53,10 +54,20 @@ namespace DPA_Musicsheets.Memento
             {
                 Current = Current.Next;
                 fileHandler.EditorText = Current.EditText;
-                //fileHandler.SetEditText(Current.EditString);
                 fileHandler.RedrawStaff();
             }
         }
+
+        public bool CanForward()
+        {
+            return this.canForward;
+        }
+
+        public bool CanBackward()
+        {
+            return this.canBackward;
+        }
+
 
     }
 }
