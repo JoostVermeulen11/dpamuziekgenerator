@@ -99,6 +99,7 @@ namespace DPA_Musicsheets.Managers
         {
             WPFStaffs.Clear();
             EditorText = "";
+            
 
             inputReader = ReaderFactory.getReader(System.IO.Path.GetExtension(fileName));
             musicSheet = inputReader.readNotes(fileName);
@@ -107,6 +108,8 @@ namespace DPA_Musicsheets.Managers
                            
             WPFStaffsChanged?.Invoke(this, new WPFStaffsEventArgs() { Symbols = WPFStaffs, Message = "" });
             SequenceChanged?.Invoke(this, new SequenceEventArgs() { PlayableSequence = drawer.PlayableSequence });
+
+            memento.Reset();
         }
 
         public void SetEditText(string fileName)

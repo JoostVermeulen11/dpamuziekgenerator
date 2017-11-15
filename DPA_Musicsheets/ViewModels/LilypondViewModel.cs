@@ -20,11 +20,30 @@ namespace DPA_Musicsheets.ViewModels
 
         private string _text;
         private string _previousText;
-        private string _nextText;
         private bool _IsEditingEnabled;
         private string _EditButtonContent;
         private bool _SaveMethodSelected = false;
         private int _CursorLocation = 0;
+
+        public bool CanForward
+        {
+            get { return _fileHandler.memento.canForward; }
+            set
+            {
+                _fileHandler.memento.canForward = value;
+                RaisePropertyChanged(() => CanForward);
+            }
+        }
+
+        public bool CanBackward
+        {
+            get { return _fileHandler.memento.canBackward; }
+            set
+            {
+                _fileHandler.memento.canBackward = value;
+                RaisePropertyChanged(() => CanBackward);
+            }
+        }
 
         public int CursorLocation
         {
@@ -162,34 +181,27 @@ namespace DPA_Musicsheets.ViewModels
                     
                         _fileHandler.EditorText = LilypondText;
                         _fileHandler.memento.NewNode(LilypondText);
-                        _fileHandler.memento.canBackward = true;
+                        CanBackward = true;
                     }
                 }, TaskScheduler.FromCurrentSynchronizationContext()); // Request from main thread.
-            }
+            }            
         });
 
         public ICommand SelectionChangedCommand => new RelayCommand<RoutedEventArgs>((args) =>
         {
             int currentSelection = (args.OriginalSource as System.Windows.Controls.TextBox).SelectionStart;
             _fileHandler.CursorLocation = currentSelection;
-            Console.WriteLine("SelectionChanged: " + currentSelection.ToString());
         });
 
         public RelayCommand UndoCommand => new RelayCommand(() =>
-        {            
-           if (_fileHandler.memento.CanBackward())
-            {
-                _fileHandler.memento.Back();
-                _fileHandler.memento.canForward = true;
-            }          
+        {                
+            _fileHandler.memento.Back();
+            CanForward = true;
         });
 
         public RelayCommand RedoCommand => new RelayCommand(() =>
         {
-            if (_fileHandler.memento.CanForward())
-            {
-                _fileHandler.memento.Forward();
-            }            
+            _fileHandler.memento.Forward();                      
         });
 
         public ICommand SaveAsCommand => new RelayCommand(() =>
@@ -199,7 +211,9 @@ namespace DPA_Musicsheets.ViewModels
 
         public ICommand EditStateCommand => new RelayCommand(() =>
         {
-            _fileHandler.CurrentState.SwitchState();            
+            _fileHandler.CurrentState.SwitchState();
+            CanBackward = false;
+            CanForward = false;
         });
     }
 }

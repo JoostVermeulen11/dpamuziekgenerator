@@ -58,16 +58,14 @@ namespace DPA_Musicsheets.Memento
             }
         }
 
-        public bool CanForward()
+        public void Reset()
         {
-            return this.canForward;
+            Root = null;
+            Current = null;
+            Last = null;
+            canBackward = false;
+            canForward = false;
         }
-
-        public bool CanBackward()
-        {
-            return this.canBackward;
-        }
-
 
     }
 }
