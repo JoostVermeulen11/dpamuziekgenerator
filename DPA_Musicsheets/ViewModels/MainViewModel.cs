@@ -39,7 +39,7 @@ namespace DPA_Musicsheets.ViewModels
             get { return _currentState; }
             set { _currentState = value; RaisePropertyChanged(() => CurrentState); }
         }
-
+        string commandString;
         private FileHandler _fileHandler;
 
         public MainViewModel(FileHandler fileHandler)
@@ -57,7 +57,7 @@ namespace DPA_Musicsheets.ViewModels
                 hasSaved = args.HasSaved;
             };
 
-
+            commandString = "";
             MessengerInstance.Register<CurrentStateMessage>(this, (message) => CurrentState = message.State);
         }
 
@@ -79,7 +79,7 @@ namespace DPA_Musicsheets.ViewModels
 
         public ICommand OnKeyDownCommand => new RelayCommand<KeyEventArgs>((e) =>
         {
-            string commandString = "";
+        Console.WriteLine(e.Key.ToString());
             if (Keyboard.Modifiers == ModifierKeys.Control)
             {
                 if (Keyboard.IsKeyDown(Key.S))
@@ -111,7 +111,10 @@ namespace DPA_Musicsheets.ViewModels
                 }
             }
             if (commandString != "")
+            {
                 _fileHandler.TryExecuteCommand(commandString);
+                commandString = "";         
+            }                
         });
 
         public ICommand OnKeyUpCommand => new RelayCommand<KeyEventArgs>((e) =>

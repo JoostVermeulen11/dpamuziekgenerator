@@ -25,8 +25,7 @@ namespace DPA_Musicsheets.States
             Commands = new List<ICommand>();
 
             fileHandler.SetEditText(fileHandler.GetFileName());
-          
-            
+                      
             Commands.Add(new InsertTime34Command(fileHandler));
             Commands.Add(new InsertTime44Command(fileHandler));
             Commands.Add(new InsertTime68Command(fileHandler));
@@ -53,6 +52,11 @@ namespace DPA_Musicsheets.States
         public void ExecuteCommand()
         {
             ExecutableCommand.execute();
+            if (ExecutableCommand.commandName != "OpenPDF" && ExecutableCommand.commandName != "Lilypond" && ExecutableCommand.commandName != "Pdf")
+            {
+                fileHandler.memento.NewNode(fileHandler.EditorText);
+            }
+
         }
 
         public void SwitchState()

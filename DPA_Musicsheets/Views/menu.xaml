@@ -20,7 +20,7 @@
         <MenuItem Header="_Insert">
             <MenuItem Header="_Insert clef" Command="{Binding ExecuteCommand}" CommandParameter="insertClef"/>
             <MenuItem Header="_Insert tempo 4=120" Command="{Binding ExecuteCommand}" CommandParameter="insertTempo"/>
-            <MenuItem Header="_Insert time 4/4" Command="{Binding ExecuteCommand}" CommandParameter="insertTime44"/>
+            <MenuItem Header="_Insert time 4/4" Command="{Binding ExecuteCommand}" CommandParameter="LeftAltT"/>
             <MenuItem Header="_Insert time 3/4" Command="{Binding ExecuteCommand}" CommandParameter="insertTime34"/>
             <MenuItem Header="_Insert time 6/8" Command="{Binding ExecuteCommand}" CommandParameter="insertTime68"/>
         </MenuItem>

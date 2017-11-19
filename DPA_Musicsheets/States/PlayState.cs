@@ -46,6 +46,7 @@ namespace DPA_Musicsheets.States
 
         public void ExecuteCommand()
         {
+            
             ExecutableCommand.execute();
         }
 

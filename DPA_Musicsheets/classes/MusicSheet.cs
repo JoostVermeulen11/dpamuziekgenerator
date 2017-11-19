@@ -20,22 +20,7 @@ namespace DPA_Musicsheets.classes
 
         public void addmusicSymbol(IMusicSymbol symbol)
         {
-            try
-            {
-                if (items.Last != null)
-                {
-                    Repeater repeater = (Repeater)items.Last.Value;
-                    repeater.addmusicSymbol(symbol);
-                }
-                else
-                {
-                    items.AddLast(symbol);
-                }
-            }
-            catch (InvalidCastException)
-            {
-                items.AddLast(symbol);
-            }
+            items.AddLast(symbol);
         }
     }
 }
