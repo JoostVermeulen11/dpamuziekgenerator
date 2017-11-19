@@ -81,6 +81,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
     <Reference Include="System.Windows.Interactivity, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\MvvmLightLibs.5.3.0.0\lib\net45\System.Windows.Interactivity.dll</HintPath>
       <Private>True</Private>
@@ -188,6 +190,22 @@
     <Compile Include="MIDI\MIDIMessageHandler\MIDITypeHandler\TrackNameHandler.cs" />
     <Compile Include="Models\LilypondToken.cs" />
     <Compile Include="Models\LilypondTokenKind.cs" />
+    <Compile Include="MusicXml\Context.cs" />
+    <Compile Include="MusicXml\MusicXmlReader.cs" />
+    <Compile Include="MusicXml\MXLFileReader.cs" />
+    <Compile Include="MusicXml\XmlElementParser\Handlers\AttributesHandler.cs" />
+    <Compile Include="MusicXml\XmlElementParser\ElementHandlerFactory.cs" />
+    <Compile Include="MusicXml\XmlElementParser\Handlers\SymbolHandlers\ISymbolHandler.cs" />
+    <Compile Include="MusicXml\XmlElementParser\Handlers\SymbolHandlers\NoteAttributeHandlers\AlterHandler.cs" />
+    <Compile Include="MusicXml\XmlElementParser\Handlers\SymbolHandlers\NoteAttributeHandlers\DotHandler.cs" />
+    <Compile Include="MusicXml\XmlElementParser\Handlers\SymbolHandlers\NoteAttributeHandlers\INoteAttributeHandler.cs" />
+    <Compile Include="MusicXml\XmlElementParser\Handlers\SymbolHandlers\NoteAttributeHandlers\OctaveHandler.cs" />
+    <Compile Include="MusicXml\XmlElementParser\Handlers\SymbolHandlers\NoteAttributeHandlers\StepHandler.cs" />
+    <Compile Include="MusicXml\XmlElementParser\Handlers\SymbolHandlers\NoteAttributeHandlers\TypeHandler.cs" />
+    <Compile Include="MusicXml\XmlElementParser\Handlers\SymbolHandlers\NoteHandler.cs" />
+    <Compile Include="MusicXml\XmlElementParser\Handlers\SymbolHandlers\RestNoteHandler.cs" />
+    <Compile Include="MusicXml\XmlElementParser\IElementHandler.cs" />
+    <Compile Include="MusicXml\XmlElementParser\Handlers\MeasureHandler.cs" />
     <Compile Include="Saving\SaveFactory.cs" />
     <Compile Include="Saving\Savers\LilypondSaver.cs" />
     <Compile Include="Saving\Savers\PdfSaver.cs" />

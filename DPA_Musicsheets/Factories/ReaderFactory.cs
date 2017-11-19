@@ -1,6 +1,7 @@
 ﻿using DPA_Musicsheets.Interfaces;
 using DPA_Musicsheets.Lilypond;
 using DPA_Musicsheets.MIDI;
+using DPA_Musicsheets.MusicXml;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,8 +17,10 @@ namespace DPA_Musicsheets.Factories
         {
             readers = new Dictionary<String, IInputReader>();
             readers.Add(".mid", new MidiFileReader());
+            readers.Add(".mxl", new MXLFileReader());
+            readers.Add("xmlreader", new MusicXmlReader());
             readers.Add(".ly", new LilypondFileReader());
-            readers.Add("lilypond", new LilypondReader());
+            readers.Add("lilypond", new LilypondReader());            
         }
 
         public static IInputReader getReader(string readerName)
