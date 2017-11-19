@@ -18,9 +18,12 @@ namespace DPA_Musicsheets.MusicXml.XmlElementParser
 
         public void handle(Context context, XElement xml)
         {
+            if (xml.Elements("barline").Count() > 0)
+                context.EndOfSheet = true;
+
             foreach (XElement childElement in xml.Elements("note"))
             {
-                //process elke noot afzonderlijk, en voeg deze daarna toe aan de musicsheet.
+                                //process elke noot afzonderlijk, en voeg deze daarna toe aan de musicsheet.
                 if (childElement.Elements("rest").Count() > 0)
                 {
                     //new restnotehandler
@@ -32,7 +35,12 @@ namespace DPA_Musicsheets.MusicXml.XmlElementParser
                 }
             }
             //als alle noten van de measure zijn geprocessed, kan er dus een maatstreep toe worden gevoegd.
-            context.musicSheet.addmusicSymbol(new MaatStreep());
+            if(!context.EndOfSheet)
+                context.musicSheet.addmusicSymbol(new MaatStreep());
+            else
+            {
+                context.musicSheet.addmusicSymbol(new Repeater() { repeats = 0 });
+            }
         }
     }
 }

@@ -64,7 +64,13 @@ namespace DPA_Musicsheets.Visitor
 
         public void visit(Tempo tempo)
         {
-            
+            //tempo niet ondersteund
+        }
+
+        public void visit(EndOfTrack endOfTrack)
+        {
+            //MusicalSymbol symbol = new PSAMControlLibrary.MusicalSymbol.;
+           // staff.Add(symbol);
         }
 
         public void visit(Repeater repeater)

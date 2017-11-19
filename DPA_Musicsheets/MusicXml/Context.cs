@@ -10,13 +10,15 @@ namespace DPA_Musicsheets.MusicXml
 {
     class Context
     {
-        public Context()
-        {
-            musicSheet = new MusicSheet();
-        }
-
+        public bool EndOfSheet { get; set; }
         public MusicSheet musicSheet { get; set; }
         public Sequence _sequence { get; set; }
         public int Divisions { get; set; }
+
+        public Context()
+        {
+            musicSheet = new MusicSheet();
+            EndOfSheet = false;
+        }
     }
 }

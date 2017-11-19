@@ -16,5 +16,6 @@ namespace DPA_Musicsheets.Interfaces
         void visit(MaatStreep maatstreep);
         void visit(Tempo tempo);
         void visit(Repeater repeater);
+        void visit(EndOfTrack endOfTrack);
     }
 }
