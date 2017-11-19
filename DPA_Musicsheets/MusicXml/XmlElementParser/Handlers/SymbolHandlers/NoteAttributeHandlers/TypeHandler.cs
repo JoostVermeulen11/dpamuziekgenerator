@@ -23,7 +23,7 @@ namespace DPA_Musicsheets.MusicXml.XmlElementParser.Handlers.SymbolHandlers.Note
             noteLengteLookup.Add("half", 2);
             noteLengteLookup.Add("quarter", 4);
             noteLengteLookup.Add("eighth", 8);
-            noteLengteLookup.Add("sixteenth", 16);
+            noteLengteLookup.Add("16th", 16);
             noteLengteLookup.Add("d32nd", 32);
         }
         

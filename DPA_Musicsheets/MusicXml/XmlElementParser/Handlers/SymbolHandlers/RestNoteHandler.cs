@@ -31,6 +31,10 @@ namespace DPA_Musicsheets.MusicXml.XmlElementParser.Handlers.SymbolHandlers
 
             foreach (XElement childElement in Elements)
             {
+                if(childElement.Name.ToString() == "duration")
+                {
+                    noot.duur = Convert.ToInt16(childElement.Value);
+                }
                 if (NoteAttributeHandlers.ContainsKey(childElement.Name.ToString()))
                 {
                     NoteAttributeHandlers[childElement.Name.ToString()].clone().handle(noot, childElement);
