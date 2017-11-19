@@ -1,0 +1,725 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="2322522e-7082-4ab5-b021-96c48045bdc5"
+  name="enums"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="27adef91-c78f-40b1-8b69-eea16b3b9ea4"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DDPA_Musicsheets.enums"
+      tag="ViewCode" />
+  </referencesInternal>
+  <profileInstances>
+    <packageHasProfileInstances
+      Id="8a58f17e-2b75-4cd8-b543-c889a08d1168">
+      <profileInstance
+        Id="b4f9e157-49b8-4733-809d-d21cbad24853"
+        name="CSharpProfile" />
+    </packageHasProfileInstances>
+  </profileInstances>
+  <packagedElements>
+    <packageHasNamedElement>
+      <enumeration
+        Id="b96ef510-9c34-49bd-acac-49b9b66cfacb"
+        name="NoteItem"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="e4643668-30e3-4dba-89f4-e0a7c0c684d7"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DNoteItem"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="fad6dc87-d000-4b26-81b4-7f706880edb3"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="76b64143-997d-49b2-a289-b3696d4172bd">
+                <propertyInstance
+                  Id="9a1317a3-e491-47f9-8610-d995f4dbc361"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0f79eda4-8589-47c2-bb01-9a9efa58a261">
+                <propertyInstance
+                  Id="c019a064-cb9d-46f4-b15c-2c6daa7308df"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="15366aa1-83a5-49ee-bf28-970c1238f39b">
+                <propertyInstance
+                  Id="9b668ee0-5096-4de4-8596-191a1d9913c3"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="cec404d0-13f6-429c-bafe-3c8823a11eaa"
+            name="Kruis">
+            <referencesInternal>
+              <reference
+                Id="deaee64e-6bd4-441a-98f9-4a1da5b300ec"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DNoteItem Member%3DKruis"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="7a720a18-5bea-4e7d-b663-98d532ebe830"
+            name="Mol">
+            <referencesInternal>
+              <reference
+                Id="aef761b5-6754-4d11-b153-6cc893daf841"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DNoteItem Member%3DMol"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="19d960b8-2abd-4d95-bc7a-37188a166176"
+            name="Geen">
+            <referencesInternal>
+              <reference
+                Id="14845647-f014-4815-94c9-49c04a27137d"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DNoteItem Member%3DGeen"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="fe0a80f2-05c0-4eb7-bf1c-283e12e14741"
+        name="TieType"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="51a1cd2f-70eb-4b43-a7d2-5af5d6df822b"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTieType"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="73a8f70a-c364-4344-a172-283c81617d1b"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="ffbcfa71-ee17-4c4b-b230-bb9854ce03b2">
+                <propertyInstance
+                  Id="fa97dab8-e2f5-401d-a9f3-391fdaf9068b"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2d89782b-08df-4171-8861-4aef1dc3a62f">
+                <propertyInstance
+                  Id="f24d59b1-7c61-4dda-a19f-e3be489c116f"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="be724f7b-84c3-4aac-bcdc-8b3ac357e383">
+                <propertyInstance
+                  Id="9be7c7a2-2a4a-4e2a-a655-c67d3cbc7009"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="8b766de0-a0b7-452d-8903-11bd9d4ffa72"
+            name="None">
+            <referencesInternal>
+              <reference
+                Id="60632b69-1e67-4c42-81e4-daced2d49c26"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTieType Member%3DNone"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="e6cf93d0-d7d1-4157-8a4f-758023dc4ba0"
+            name="start">
+            <referencesInternal>
+              <reference
+                Id="a04e0dbe-a455-4e6b-ac12-c1bc0dfb51d5"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTieType Member%3Dstart"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="24dfd897-7fea-4689-9026-1b97cfa778ae"
+            name="stop">
+            <referencesInternal>
+              <reference
+                Id="c9150195-4cef-4ab5-9361-b23f6ac6f769"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTieType Member%3Dstop"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="587592eb-4170-46d2-b46a-df0bba813236"
+            name="startStop">
+            <referencesInternal>
+              <reference
+                Id="324e194a-de44-4546-99ec-434872ff2083"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTieType Member%3DstartStop"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="0c3e13b4-e3ad-4689-a45d-ab89a3bece6e"
+        name="ClefType"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="f0959095-11c6-4bfb-8383-40db8d888296"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DClefType"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="2186a069-cd54-45c1-88f0-f8cf25e770d9"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="507636b3-4578-4769-9f30-6db68e39b288">
+                <propertyInstance
+                  Id="ce641dfc-1b5b-4520-8c0a-04cb02145676"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="f7bca864-0819-43e7-b9ea-bc22ef354922">
+                <propertyInstance
+                  Id="93ef6689-bc6e-419e-a50a-0f8653134f3b"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a6ce31a8-4b9c-4f74-897f-0bbca02d40af">
+                <propertyInstance
+                  Id="98ffd39f-7389-48f2-a98f-64bfd7360a63"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="ed2bdc12-a5a6-4fb2-af1c-d07bc29d9ea8"
+            name="GClef">
+            <referencesInternal>
+              <reference
+                Id="e6b53efb-3ef1-423f-8f01-2b2bd5d7211f"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DClefType Member%3DGClef"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="0dd7658c-0d00-4c1f-91a0-6fce1932457a"
+            name="CClef">
+            <referencesInternal>
+              <reference
+                Id="272be697-227c-464d-a0b6-05bd2be2ac5b"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DClefType Member%3DCClef"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="0a1d1de2-c463-448d-b940-a4913eb0d134"
+            name="FClef">
+            <referencesInternal>
+              <reference
+                Id="6aa350fa-6d82-43e9-a12d-2c849a6283d6"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DClefType Member%3DFClef"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="30a4aaa7-0c86-4257-91ea-1d8d0425d3b7"
+        name="MusicType"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="00e7afa4-a3dc-404b-817a-bb04552c6183"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DMusicType"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="2023058f-b28c-43e6-b179-9c02085cbd79"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="59e8ba49-7a3e-4664-a738-b0e3b00f7e58">
+                <propertyInstance
+                  Id="74adbe5c-0964-4c3a-add2-ae0b8f107160"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="811e8203-46d5-41b8-962f-9b1095ec8d81">
+                <propertyInstance
+                  Id="3e7dccec-bb6f-47ca-9ead-839265da6f08"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c376078e-b1c0-4032-8d0b-4752e67926d4">
+                <propertyInstance
+                  Id="5f7fb4ee-5e0b-49aa-b5aa-c03598ca842d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="2d4d32ae-8621-454a-aad3-cb26fdb90256"
+            name="Note">
+            <referencesInternal>
+              <reference
+                Id="5d9b1209-9029-4683-bf3c-e4dc2cfe147e"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DMusicType Member%3DNote"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="1650f90b-3be1-4ba2-83fa-1065c283159a"
+            name="Rust">
+            <referencesInternal>
+              <reference
+                Id="46cd42d8-a790-4a84-8608-e03257cf7cee"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DMusicType Member%3DRust"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="963c343f-db65-45bd-80a4-325211528290"
+            name="Clef">
+            <referencesInternal>
+              <reference
+                Id="993e627f-733c-42e2-8840-b3b3228d9add"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DMusicType Member%3DClef"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="70a90035-c9c7-44fb-9d4c-04dda10da428"
+            name="Tempo">
+            <referencesInternal>
+              <reference
+                Id="58d7c91c-2347-4255-8bab-e13b84fe81b5"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DMusicType Member%3DTempo"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="7e09b929-170d-4c2b-9f7b-270221d0bc98"
+            name="Bar">
+            <referencesInternal>
+              <reference
+                Id="29240c89-02dc-4118-86db-934c373e3bc9"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DMusicType Member%3DBar"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="83332e87-dcd7-4118-a11d-3392e0354390"
+            name="TimeSignature">
+            <referencesInternal>
+              <reference
+                Id="25b87703-62e2-4f8c-a8c6-4bfadd61af61"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DMusicType Member%3DTimeSignature"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="c2885e3e-9aef-4e20-b565-8416af88df48"
+        name="GUIStateType"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="a4c5c15f-1dbb-4b86-b5bd-21fcc354f3bf"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DGUIStateType"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="3a0a8328-05d7-4b2a-8a10-b21b24c72e6a"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="cfcda666-9b41-400b-b480-fe75eb7daf3a">
+                <propertyInstance
+                  Id="0d51d84f-1cd3-4833-9406-1d5ca09d6f66"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5a8eb5f9-b784-41f0-82c6-a8d58f4b71a7">
+                <propertyInstance
+                  Id="44ba4166-3433-4f42-a939-c28b23d69d03"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="11c3e01b-1c7f-4d66-83bb-b851b6d91b12">
+                <propertyInstance
+                  Id="de6d4b1e-feae-43fd-8f31-fb8ad4cb5402"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="8af41649-7d3d-44c8-8918-fd3f36464c74"
+            name="Edit">
+            <referencesInternal>
+              <reference
+                Id="898ac924-934e-4d3f-891b-160259b49406"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DGUIStateType Member%3DEdit"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="d66636af-af73-4f35-a76b-26cf001c1677"
+            name="Play">
+            <referencesInternal>
+              <reference
+                Id="eb3be37f-900b-443b-88ed-2fd753566340"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DGUIStateType Member%3DPlay"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="ed970448-a9a7-4445-af10-2bb5fc79c499"
+        name="StateType"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="9dfa1197-7fed-435f-b86a-b8adbcca0df4"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DStateType"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="1a669fe3-ff4f-46bd-9bf3-b89a63b57d7e"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="dfa27f42-534e-4520-b9ef-5bd0ad3f3c51">
+                <propertyInstance
+                  Id="2dc4e36a-baa3-45ab-8d27-5fa976b7e0a6"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="669f59dc-22bc-4378-8444-16d9dd1d7376">
+                <propertyInstance
+                  Id="78e1054a-786c-4440-8190-abd82de260a5"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="5e16277b-00e1-4458-9f24-6494b2f702ef">
+                <propertyInstance
+                  Id="fc4acf27-e5e9-4cbc-aebf-f9781a7bc750"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="0f1cebec-c910-4511-8542-c472c0bcad08"
+            name="Edit">
+            <referencesInternal>
+              <reference
+                Id="a695e936-c5f7-4adc-a8af-eab942c8feda"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DStateType Member%3DEdit"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="2eeb4124-c8b2-4a3b-8c94-9e47e87bb93d"
+            name="Play">
+            <referencesInternal>
+              <reference
+                Id="da2d4f50-5e06-4cb1-9eb1-7e5b86b6bfe1"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DStateType Member%3DPlay"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <enumeration
+        Id="2ce00efc-ae50-400c-96d1-8f0e5dc6cab3"
+        name="TokenType"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false">
+        <referencesInternal>
+          <reference
+            Id="580f1479-fb98-4037-9a4f-621fc924b801"
+            handle="viewcode://./CodeSchema_Enum?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="f7fec3dd-942b-48cc-8b72-1c142b1d13e7"
+            name="enum"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3bb1f6b2-8d50-41f0-9960-75130811ad0c">
+                <propertyInstance
+                  Id="e3d0b964-95e1-4962-b14d-b486d8e5e2a9"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="af6d4beb-0b9a-40e6-92b3-5da1eb8b412c">
+                <propertyInstance
+                  Id="bb9d3a23-e0ff-4f78-8b94-ad12628d2730"
+                  name="BaseType"
+                  value="int" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="c7767eaf-256a-4673-b278-70cdd074987a">
+                <propertyInstance
+                  Id="c7585fd8-8464-4470-b66a-3b47b59fd001"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedLiterals>
+          <enumerationLiteral
+            Id="73c3d1d9-c541-4130-9c67-c6e3b03bb6ec"
+            name="Note">
+            <referencesInternal>
+              <reference
+                Id="47684836-9655-45cf-81b0-f990b1c3528a"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3DNote"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="9f2ab60e-bd3f-4ce7-88d2-81f7da91aa1f"
+            name="Clef">
+            <referencesInternal>
+              <reference
+                Id="679a412b-baa1-42d0-95df-4cf9abb35373"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3DClef"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="bdffef98-8233-4667-9552-09fc8bc84dd1"
+            name="relative">
+            <referencesInternal>
+              <reference
+                Id="991d4dd9-092b-4183-8e58-5017e9c1d358"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3Drelative"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="12e3b215-c3e8-4d24-b947-d509934d0ae9"
+            name="timeSignature">
+            <referencesInternal>
+              <reference
+                Id="14ed5eb8-4bb9-4609-8cc8-3bd0644b7c3c"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3DtimeSignature"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="db8e3a4b-b509-41fb-b9e3-7da453584ce7"
+            name="timeSignaturedata">
+            <referencesInternal>
+              <reference
+                Id="25a36d33-881c-4323-b543-ba241a34f391"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3DtimeSignaturedata"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="b072ed9a-2a87-41a7-9c0f-8e80895ff905"
+            name="ClefType">
+            <referencesInternal>
+              <reference
+                Id="dca53de5-7ead-4686-b155-82ce2be46a73"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3DClefType"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="0bc0f0d4-7369-45ab-a54e-13010bb8bb36"
+            name="Startblok">
+            <referencesInternal>
+              <reference
+                Id="a217baca-50d5-4c02-888a-026dfa6e8ae3"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3DStartblok"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="5a0951c5-915e-4829-ba59-b5be831722e3"
+            name="EndBlok">
+            <referencesInternal>
+              <reference
+                Id="91e65a12-2ef3-457f-b9d0-01e8a12fa527"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3DEndBlok"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="4bd30844-e111-4dcd-8858-084062b9d67d"
+            name="Tempo">
+            <referencesInternal>
+              <reference
+                Id="f9c307f7-e163-47e9-9131-faa1e1c514f1"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3DTempo"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="01e4cb4c-bab6-4c56-9737-77e3bdbe0d18"
+            name="Staff">
+            <referencesInternal>
+              <reference
+                Id="17843f36-c22c-4556-b89a-a518e3dfd633"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3DStaff"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="158a3c40-7977-4c62-96c2-0770fbab4b68"
+            name="TempoValue">
+            <referencesInternal>
+              <reference
+                Id="e5005889-605f-4bb6-99cb-db14db392554"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3DTempoValue"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="d738fbba-9a10-4596-adc5-2d47304ce909"
+            name="Maatstreep">
+            <referencesInternal>
+              <reference
+                Id="98760ec7-d115-407f-a005-f4759cdefef8"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3DMaatstreep"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="a92a7ba3-1b21-4a63-8a24-68d1f593b833"
+            name="Rust">
+            <referencesInternal>
+              <reference
+                Id="029352d0-8578-48ce-930e-2ddcbc2cbe78"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3DRust"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="fc8de200-c5ba-4b9d-85a7-28d0f3a574b3"
+            name="Version">
+            <referencesInternal>
+              <reference
+                Id="feb25ac1-0cd4-4af8-884f-62fdc0c0ff1b"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3DVersion"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="a253b95e-2e27-4eeb-90fe-35a74448f75b"
+            name="Header">
+            <referencesInternal>
+              <reference
+                Id="37ef5f37-9505-4f3f-90f9-1b257bf52f16"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3DHeader"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="7e013d9b-8c82-4f90-8602-404624000e38"
+            name="Repeat">
+            <referencesInternal>
+              <reference
+                Id="86f9fb19-ffae-4fa3-b693-e7b37cfbe8fc"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3DRepeat"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="9db46be7-c63f-47fa-9e04-0c2e1630b7d5"
+            name="Number">
+            <referencesInternal>
+              <reference
+                Id="096828de-a4e4-4ca1-bbfd-bb26ca70a688"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3DNumber"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+          <enumerationLiteral
+            Id="dc61fb47-7d4d-4b56-8e54-a21a7455ea6a"
+            name="Nothing">
+            <referencesInternal>
+              <reference
+                Id="f8546e18-3a47-47b2-ab71-3dc7fd354ad4"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.enums Type%3DTokenType Member%3DNothing"
+                tag="ViewCode" />
+            </referencesInternal>
+          </enumerationLiteral>
+        </ownedLiterals>
+      </enumeration>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

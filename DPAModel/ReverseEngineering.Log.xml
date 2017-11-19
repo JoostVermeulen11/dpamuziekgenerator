@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="file:///C:/PROGRAM FILES (X86)/MICROSOFT VISUAL STUDIO 11.0/COMMON7/IDE/EXTENSIONS/MICROSOFT/ARCHITECTURE TOOLS/EXTENSIBILITY/Logging/ReverseEngineeringLog.xslt"?>
+<Log xmlns="http://schemas.microsoft.com/VisualStudio/2010/CodeGen.RE.Log" Label="Code Generation/Text Transformation Log">
+  <MessageClass Name="Message" Label="Message" Option="Show informational messages" />
+  <MessageClass Name="Warning" Label="Warning" Option="Show warnings" />
+  <MessageClass Name="Error" Label="Error" Option="Show errors" />
+  <MessageClass Name="Property" Label="Property" Option="Show metadata" />
+  <MessageClass Name="Diagnostic" Label="Message" Option="Show diagnostic messages" />
+  <Message Timestamp="2017-11-19T16:18:47" Importance="High" Text="Reverse Engineering Started." />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: '7c7b1f4a-3f42-4767-bacc-b1eff7a18033' -  (ClassifierTemplateParameter)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets' -  (Package)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Adapter' -  (Package)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Adapter::ClefAdapter' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Adapter::NootAdapter' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::classes' -  (Package)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::classes::Clef' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::classes::EndOfTrack' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::classes::MaatStreep' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::classes::Note' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::classes::Repeater' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::classes::RustNote' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::classes::Tempo' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::classes::TimeSignature' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Interfaces' -  (Package)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Interfaces::IVisitor' -  (Interface)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor' -  (Package)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Medium" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor::StaffVisitor' -  (Class)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor::StaffVisitor::clefAdapter' -  (Property)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor::StaffVisitor::getSymbolList' -  (Operation)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor::StaffVisitor::nootAdapter' -  (Property)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor::StaffVisitor::staff' -  (Property)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor::StaffVisitor::StaffVisitor' -  (Operation)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor::StaffVisitor::StaffVisitor::staff' -  (Parameter)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor::StaffVisitor::updateStaff' -  (Operation)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor::StaffVisitor::visit' -  (Operation)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor::StaffVisitor::visit::clef' -  (Parameter)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor::StaffVisitor::visit::endOfTrack' -  (Parameter)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor::StaffVisitor::visit::maatstreep' -  (Parameter)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor::StaffVisitor::visit::noot' -  (Parameter)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor::StaffVisitor::visit::repeater' -  (Parameter)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor::StaffVisitor::visit::rustNode' -  (Parameter)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor::StaffVisitor::visit::tempo' -  (Parameter)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::DPA_Musicsheets::Visitor::StaffVisitor::visit::timeSignature' -  (Parameter)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::PSAMControlLibrary' -  (Package)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::PSAMControlLibrary::MusicalSymbol' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::System' -  (Package)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::System::Collections' -  (Package)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::System::Collections::Generic' -  (Package)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::System::Collections::Generic::List' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Element reverse engineered into the UML model: 'DPAModel::System::Collections::Generic::List&lt;MusicalSymbol‎&gt;' -  (Class)   (partially reverse engineered - definition not updated) " />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: DPAModel::DPA_Musicsheets::Visitor::StaffVisitor to DPAModel::DPA_Musicsheets::Interfaces::IVisitor (InterfaceRealization)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="Diagnostic" Text="Relationship reverse engineered into the UML model: DPAModel::System::Collections::Generic::List&lt;MusicalSymbol‎&gt; to DPAModel::System::Collections::Generic::IEnumerable&lt;MusicalSymbol‎&gt; (InterfaceRealization)" />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="High" Text="(1) type(s) fully reverse engineered." />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="High" Text="(14) type(s) partially reverse engineered.  These types were not included in the original selection so their full definitions are not reverse engineered.  Instead, this shallow operation has simply ensured these types exist in the UML model because they are needed in order to fully describe other elements." />
+  <Message Timestamp="2017-11-19T16:18:49" Importance="High" Text="The reverse engineering operation completed with (0) error(s), and (0) warning(s)." />
+</Log>

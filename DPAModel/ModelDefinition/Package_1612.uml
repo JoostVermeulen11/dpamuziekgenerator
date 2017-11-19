@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="6717c649-0a75-4108-8a6a-aa3f9c73483c"
+  name="SymbolHandlers"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="3bcad89b-e30d-43d8-8344-1c46b01bb044"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DDPA_Musicsheets.MusicXml.XmlElementParser.Handlers.SymbolHandlers"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="eeb1335d-5196-48c2-86e4-3a8a06712099"
+        LastKnownName="NoteAttributeHandlers"
+        LastKnownLocation="Package1_1612.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

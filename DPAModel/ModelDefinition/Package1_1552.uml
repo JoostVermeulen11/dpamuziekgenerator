@@ -1,0 +1,374 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="4255a17d-a2e4-4c6e-8567-49cdcdc66933"
+  name="Factories"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="90642362-d01e-4be7-bd7b-ce23da41985f"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DDPA_Musicsheets.Factories"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="deb02ceb-2751-473b-a154-7dfe7f1b276d"
+        name="ReaderFactory"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="d390f87a-c936-4eab-b60e-80938f998be5"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.Factories Type%3DReaderFactory"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="80a0b3a9-67ae-4752-9894-659482ee5037"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="a440d331-f2d7-4c80-8122-f2af3c2f21da">
+                <propertyInstance
+                  Id="eca53383-eb77-4d73-9b6e-c796ba1ad924"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="54dd291a-ea13-4633-9409-ee6a27790cc4">
+                <propertyInstance
+                  Id="887d2c1b-9c1d-4855-96ed-4dd435adec91"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="3f988cae-73bc-4ed2-8323-eb4fb48373b8">
+                <propertyInstance
+                  Id="533b89f8-7dd4-4b34-9028-5832a7a69e6c"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="b2c6227a-9989-443b-82d1-5f18e3889d77">
+                <propertyInstance
+                  Id="f6d5b0b6-ec92-4469-b3a5-acf9da7f9443"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="947840f2-b8f7-4d4c-81c8-af238d399531">
+                <propertyInstance
+                  Id="0eadf3ce-97e6-4d0b-90b7-8e7a709a2a3c"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <ownedAttributesInternal>
+          <property
+            Id="297bf34e-0858-4b76-84ef-ee187940da1b"
+            name="readers"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isReadOnly="false"
+            isDerived="false"
+            isDerivedUnion="false"
+            aggregation="None"
+            isComposite="false">
+            <referencesInternal>
+              <reference
+                Id="099063b1-5861-4d75-9c92-accab3535535"
+                handle="viewcode://./CodeSchema_Field?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.Factories Type%3DReaderFactory Member%3Dreaders"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="abaa178a-551e-4347-b3d9-c152eee4d23c"
+                name="field"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="72ee3745-3782-4d0e-951d-e7fba656a29c">
+                    <propertyInstance
+                      Id="730602bf-4779-4be0-87a8-e5f274d22c86"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8cb496e2-8960-4ca7-9ed2-89509540b517">
+                    <propertyInstance
+                      Id="5a611648-d9a5-47a4-8c91-f1ac9415500a"
+                      name="IsConst"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ebcb51a8-ea3c-4f21-aa87-71f4b9e3cad2">
+                    <propertyInstance
+                      Id="954e5b02-afd3-4ef3-8c88-2db6e3e7d7fc"
+                      name="IsNullable"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="480f1708-9b06-4479-8f20-cc67a15cb86d">
+                    <propertyInstance
+                      Id="1d98af8b-df24-4c57-87c5-d26ac4ed3071"
+                      name="IsVolatile"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8f8951e9-8a73-4dc3-9b45-5929af8eaf9c">
+                    <propertyInstance
+                      Id="b07a3d3a-6105-403c-a280-663abab3f00c"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <type_NamedElement>
+              <classMoniker
+                Id="012ae30e-f5de-4557-993a-4cd14c2f5e68"
+                LastKnownName="Dictionary&lt;String‎, IInputReader‎&gt;"
+                LastKnownLocation="Package6_1543.uml" />
+            </type_NamedElement>
+          </property>
+        </ownedAttributesInternal>
+        <ownedOperationsInternal>
+          <operation
+            Id="37988d9e-4d4c-4229-87a4-748586320778"
+            name="getReader"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="bb9ed288-bbd0-4d1a-bde2-df7241931af2"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.Factories Type%3DReaderFactory Member%3D(Name%3DgetReader OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.6.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)])"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="88074260-7306-41bf-9682-22dd3d559720"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="fb97bac8-82ca-4a54-ab9d-8fff3b22c5f1">
+                    <propertyInstance
+                      Id="58352143-34dc-4ff1-85c9-483b662c86c6"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="229bb05f-6f3e-4e01-a4a5-cdc493babf2f">
+                    <propertyInstance
+                      Id="62d89145-a8c5-4686-89bb-719796b19b45"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="a0a60b36-010e-486d-822e-3e5b0dadfac1">
+                    <propertyInstance
+                      Id="3dfc0102-6e3b-4920-9097-afdd2db85c7a"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d4b768ac-f79e-4bf6-9279-842cf0e2601d">
+                    <propertyInstance
+                      Id="44c826c8-9ac2-4308-b4bf-07371fea11bc"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="4ee8ff31-34b4-4400-96f6-bbdec0e173c2">
+                    <propertyInstance
+                      Id="fbf84ff6-798f-4222-8ee3-8f754b37f364"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="da05622f-f121-468f-90c1-d68d31d1e293">
+                    <propertyInstance
+                      Id="d0c63ce7-239f-4fd0-9821-56695089e8b6"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+            <ownedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="ec7273e1-e580-43c4-943a-e4c15c442d0f"
+                  direction="Return">
+                  <type_NamedElement>
+                    <interfaceMoniker
+                      Id="850398cf-30b2-41c5-9d70-07abd70746ab"
+                      LastKnownName="IInputReader"
+                      LastKnownLocation="Package_1548.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+              <operationHasOwnedParameters>
+                <parameter
+                  Id="9e9ebcbd-facc-4388-b3cb-50fd5dce92c6"
+                  name="readerName"
+                  direction="In">
+                  <referencesInternal>
+                    <reference
+                      Id="5fd34f1f-6364-4239-b9f3-45db2862647c"
+                      handle="viewcode://./CodeSchema_Parameter?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.Factories Type%3DReaderFactory Member%3D(Name%3DgetReader OverloadingParameters%3D[(Assembly%3D&quot;file:%2F%2F%2FC:%2FProgram Files (x86)%2FReference Assemblies%2FMicrosoft%2FFramework%2F.NETFramework%2Fv4.6.1%2Fmscorlib.dll&quot; Namespace%3DSystem Type%3DString)]) ParameterIdentifier%3DreaderName"
+                      tag="ViewCode" />
+                  </referencesInternal>
+                  <type_NamedElement>
+                    <primitiveTypeMoniker
+                      Id="59259974-6d55-42c6-b7bd-763d77ac8ef9"
+                      LastKnownName="String"
+                      LastKnownLocation="DPAModel.uml" />
+                  </type_NamedElement>
+                </parameter>
+              </operationHasOwnedParameters>
+            </ownedParameters>
+          </operation>
+          <operation
+            Id="1b1ff347-b3ce-45f6-b7f1-09af9681f4dc"
+            name="static ReaderFactory"
+            visibility="Private"
+            isLeaf="false"
+            isStatic="true"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="b7d28fbc-d184-466c-8d10-c8cfee75fe00"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.Factories Type%3DReaderFactory Member%3D.cctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="fff49e19-0b03-42d2-b2b3-7fc5effc07dc"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="ea6acd09-024d-492e-9681-7b2711ef6173">
+                    <propertyInstance
+                      Id="b44d6d44-6b1b-41e5-9f16-ad088b5fbb76"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="0bad81ba-d2a0-4f5d-b2e8-c899cfa75506">
+                    <propertyInstance
+                      Id="87f8d816-69ca-4680-8753-6a9e61468946"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="14f96415-6b4a-4845-8c70-8021217532ab">
+                    <propertyInstance
+                      Id="76a806a0-f6f3-4a85-824a-f934393671d4"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="817011b3-26ba-4547-b0be-69ef80b1f432">
+                    <propertyInstance
+                      Id="c35afb9a-ea70-4f25-83ab-f70a2752ffb8"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="d5777587-2445-4803-ab15-a26990647365">
+                    <propertyInstance
+                      Id="29fb6a0f-56e1-419c-9a55-a50de8c4ec43"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="26426470-574e-41a8-9c3e-98a9c96f7f3d">
+                    <propertyInstance
+                      Id="a9a91582-1202-4905-a641-c463d749cfb0"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+          <operation
+            Id="f728a1b0-6856-4889-9636-3472cf744bef"
+            name="ReaderFactory"
+            isLeaf="false"
+            isStatic="false"
+            isAbstract="false"
+            concurrency="Sequential"
+            isQuery="false">
+            <referencesInternal>
+              <reference
+                Id="780031a7-c39d-4d28-8253-3a87780cd4c3"
+                handle="viewcode://./CodeSchema_Method?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.Factories Type%3DReaderFactory Member%3D.ctor"
+                tag="ViewCode" />
+            </referencesInternal>
+            <appliedStereotypesInternal>
+              <stereotypeInstance
+                Id="5e877249-3d76-46bc-a74e-54068a4e4802"
+                name="method"
+                profile="CSharpProfile">
+                <propertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e4b88032-edd6-4737-bf18-e20d290fe52c">
+                    <propertyInstance
+                      Id="8ddb16ef-97f2-43e6-8fc6-564d5ec8a1fa"
+                      name="ClrAttributes" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="9191ea56-500d-498f-afaa-b4b0a5e4ad2e">
+                    <propertyInstance
+                      Id="a20cbbe5-424e-4e72-a2f5-644dadcbc7df"
+                      name="IsPartial"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="e6015039-a5b1-47d5-882c-e96c104e57b4">
+                    <propertyInstance
+                      Id="022bad6d-9286-41d5-b01a-1b00105b267d"
+                      name="IsUnsafe"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="675fb713-d7b1-4553-bffc-4fdafa3764d2">
+                    <propertyInstance
+                      Id="47faae1d-5544-4820-88d5-13aa1d9a613e"
+                      name="Inheritance"
+                      value="none" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="c42eb3dd-7415-4e48-9a17-135f5499e1cb">
+                    <propertyInstance
+                      Id="f4bfd590-744c-4e7d-9832-9223753a3065"
+                      name="PackageVisibility"
+                      value="internal" />
+                  </stereotypeInstanceHasPropertyInstances>
+                  <stereotypeInstanceHasPropertyInstances
+                    Id="8176e70b-6689-4c7d-92ec-0fb9052ca10d">
+                    <propertyInstance
+                      Id="1ad3ec7d-c545-4243-8ea4-721c6011ddbb"
+                      name="params"
+                      value="false" />
+                  </stereotypeInstanceHasPropertyInstances>
+                </propertyInstances>
+              </stereotypeInstance>
+            </appliedStereotypesInternal>
+          </operation>
+        </ownedOperationsInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

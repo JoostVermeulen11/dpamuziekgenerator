@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="0a965764-3173-4a93-b69e-8e1b55ffed5c"
+  name="CommandWpf"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="1c1fab59-7836-4c40-8909-19290f33ae4b"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DGalaSoft.MvvmLight.CommandWpf"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <class
+        Id="52b79fd1-34c3-49b7-aa44-924db4e2fad1"
+        name="RelayCommand"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="8b756445-4c34-4f47-8000-1b92cf0bafa6"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2Fpackages%2FMvvmLightLibs.5.3.0.0%2Flib%2Fnet45%2FGalaSoft.MvvmLight.Platform.dll Namespace%3DGalaSoft.MvvmLight.CommandWpf Type%3DRelayCommand"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="b544e0ca-ea31-480b-9393-65b84c6d756c"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="213e238b-3f1b-4b38-a5b4-c615373f733b">
+                <propertyInstance
+                  Id="016e8511-39ad-4822-8b26-0755430741a6"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d6d9fd93-a92d-4554-bd2f-683015c6613c">
+                <propertyInstance
+                  Id="ec8fdfd9-9ac1-466c-851b-85e769d6112f"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="fce527aa-12c2-4a6c-a8f2-fff4eb75e4e7">
+                <propertyInstance
+                  Id="21ed3792-0eb3-439a-96d5-b88c82d5c99f"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9c0c7bd7-e6b5-46e7-b85c-cf0756f73cb4">
+                <propertyInstance
+                  Id="4d1f96ee-a0b1-4748-80ac-184f88a335ab"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="48f79921-308f-408b-9e24-65439fff799c">
+                <propertyInstance
+                  Id="444ce4f8-d36e-4205-86dc-7603f9798c58"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+        <suppliersInternal>
+          <interfaceRealization
+            Id="59abd1dc-f4a4-4532-b07d-ceacbad36fd4">
+            <interfaceMoniker
+              Id="c81413ae-23e8-4158-90aa-d7c3f68114a9"
+              LastKnownName="ICommand"
+              LastKnownLocation="Package2_1615.uml" />
+          </interfaceRealization>
+        </suppliersInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="93c89eaf-d528-4cbc-a31c-cfec016fe0f9"
+  name="DPA_Musicsheets"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="1f957b23-a735-436b-937e-8ecd46d413a3"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DDPA_Musicsheets"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="5c45d25b-b893-4d9d-96b7-77d6a0bf3c25"
+        LastKnownName="Adapter"
+        LastKnownLocation="Package1_1543.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="eed907df-849e-440b-95bf-b2564e38fafb"
+        LastKnownName="classes"
+        LastKnownLocation="Package3_1543.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="2322522e-7082-4ab5-b021-96c48045bdc5"
+        LastKnownName="enums"
+        LastKnownLocation="Package7_1543.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="bce7b516-b084-4826-b6bb-24f2bcd64440"
+        LastKnownName="Interfaces"
+        LastKnownLocation="Package_1548.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="b683d0e9-71d8-41a1-9e98-f64710c27e0f"
+        LastKnownName="Visitor"
+        LastKnownLocation="Package1_1548.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ee8a17b5-8316-4236-a7eb-f1557e572e3c"
+        LastKnownName="Commands"
+        LastKnownLocation="Package_1550.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="72320fee-470d-450f-b95d-60d911cd60f3"
+        LastKnownName="Managers"
+        LastKnownLocation="Package1_1550.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="f723bb86-1d40-419b-aefd-f2b5f98eb270"
+        LastKnownName="EventArgs"
+        LastKnownLocation="Package_1552.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="4255a17d-a2e4-4c6e-8567-49cdcdc66933"
+        LastKnownName="Factories"
+        LastKnownLocation="Package1_1552.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="51cf81cc-d62f-420f-96b3-fbb3e51178a3"
+        LastKnownName="Lilypond"
+        LastKnownLocation="Package_1553.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="7c4269aa-a2a1-427d-ae32-c7ea0426d7aa"
+        LastKnownName="Memento"
+        LastKnownLocation="Package1_1604.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="362a3059-b2d1-4328-a861-f401215c274d"
+        LastKnownName="Messages"
+        LastKnownLocation="Package_1606.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="ef4d40ec-4437-4aa4-899e-27d838164f5f"
+        LastKnownName="MIDI"
+        LastKnownLocation="Package1_1606.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="2b165a4c-6d5e-4d97-8252-df3e09ec6212"
+        LastKnownName="Models"
+        LastKnownLocation="Package_1608.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="af5d6dba-9ffe-4909-aed2-c218744d5985"
+        LastKnownName="MusicXml"
+        LastKnownLocation="Package_1609.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="5ab2b8cf-fa50-4d03-a377-c1df76148ae3"
+        LastKnownName="Saving"
+        LastKnownLocation="Package_1613.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="12021ba8-7ca6-4005-9eea-95b51057d785"
+        LastKnownName="States"
+        LastKnownLocation="Package2_1613.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="09e3891d-e474-4065-8f81-9ca71511b1d5"
+        LastKnownName="ViewModels"
+        LastKnownLocation="Package_1615.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="e95b5238-72a5-495c-8ea6-76ea5b058352"
+        LastKnownName="Views"
+        LastKnownLocation="Package_1616.uml" />
+    </packageHasNamedElement>
+  </packagedElements>
+</package>

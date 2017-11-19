@@ -127,12 +127,12 @@
     <Compile Include="Commands\OpenFileCommand.cs" />
     <Compile Include="Commands\SaveAsLilypondCommand.cs" />
     <Compile Include="Commands\SaveAsPDFCommand.cs" />
-    <Compile Include="enums\ClefType.cs" />
-    <Compile Include="enums\GUIStateType.cs" />
-    <Compile Include="enums\MusicType.cs" />
-    <Compile Include="enums\NoteItem.cs" />
-    <Compile Include="enums\StateType.cs" />
-    <Compile Include="enums\TieType.cs" />
+    <Compile Include="Enums\ClefType.cs" />
+    <Compile Include="Enums\GUIStateType.cs" />
+    <Compile Include="Enums\MusicType.cs" />
+    <Compile Include="Enums\NoteItem.cs" />
+    <Compile Include="Enums\StateType.cs" />
+    <Compile Include="Enums\TieType.cs" />
     <Compile Include="EventArgs\CurrentStateEventArgs.cs" />
     <Compile Include="EventArgs\FileSavedEventArgs.cs" />
     <Compile Include="Factories\ReaderFactory.cs" />
@@ -160,7 +160,7 @@
     <Compile Include="Lilypond\Interpreter\LilypondInterpreter.cs" />
     <Compile Include="Lilypond\LilypondFileReader.cs" />
     <Compile Include="Lilypond\LilypondReader.cs" />
-    <Compile Include="enums\TokenType.cs" />
+    <Compile Include="Enums\TokenType.cs" />
     <Compile Include="Lilypond\Tokenizer\checkers\NoteChecker.cs" />
     <Compile Include="Lilypond\Tokenizer\checkers\NumberChecker.cs" />
     <Compile Include="Lilypond\Tokenizer\checkers\RustChecker.cs" />

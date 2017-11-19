@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" xmlns:dm1="http://schemas.microsoft.com/dsltools/Kernel" xmlns:dm2="http://schemas.microsoft.com/dsltools/Component" xmlns:dm3="http://schemas.microsoft.com/dsltools/Activity" xmlns:dm4="http://schemas.microsoft.com/dsltools/Interaction" xmlns:dm5="http://schemas.microsoft.com/dsltools/UseCase" xmlns:dm6="http://schemas.microsoft.com/dsltools/UmlModelLibrary" xmlns:dm7="http://schemas.microsoft.com/dsltools/UmlDiagrams" xmlns:dm8="http://schemas.microsoft.com/dsltools/LogicalClassDesigner"
+  dslVersion="1.0.0.0"
+  Id="585a2173-d8ab-4901-9300-1ee20aa9eda1"
+  name="Tokenizer"
+  visibility="Private" xmlns="http://schemas.microsoft.com/dsltools/ModelStore">
+  <referencesInternal>
+    <reference
+      Id="031e017c-d713-44fa-b279-a2c929f753a1"
+      handle="viewcode://./CodeSchema_Namespace?Namespace%3DDPA_Musicsheets.Lilypond.Tokenizer"
+      tag="ViewCode" />
+  </referencesInternal>
+  <packagedElements>
+    <packageHasNamedElement>
+      <packageMoniker
+        Id="2ff083be-b29e-4f70-b7db-d806395040bf"
+        LastKnownName="checkers"
+        LastKnownLocation="Package_1604.uml" />
+    </packageHasNamedElement>
+    <packageHasNamedElement>
+      <class
+        Id="e2ea8bcd-af85-4114-ace5-8f003a374bac"
+        name="Token"
+        visibility="Package"
+        isAbstract="false"
+        isLeaf="false"
+        isActiveClass="false">
+        <referencesInternal>
+          <reference
+            Id="d9846c5a-2db3-410f-804a-5c6e0dc5f345"
+            handle="viewcode://./CodeSchema_Class?Assembly%3Dfile:%2F%2F%2FC:%2FUsers%2FJoost%2FDocuments%2Fdpamuziekgenerator%2FDPA_Musicsheets%2Fbin%2FDebug%2FDPA_Musicsheets.exe Namespace%3DDPA_Musicsheets.Lilypond.Tokenizer Type%3DToken"
+            tag="ViewCode" />
+        </referencesInternal>
+        <appliedStereotypesInternal>
+          <stereotypeInstance
+            Id="bdc5d504-3320-4c50-800c-39848a531a61"
+            name="class"
+            profile="CSharpProfile">
+            <propertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="d2c93080-03c4-455b-8f2f-2fdff382f7a2">
+                <propertyInstance
+                  Id="afb49963-483d-45d3-b774-7f59d74d742c"
+                  name="ClrAttributes" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="9252ec5a-dcaa-4a0b-9102-09a04d785e58">
+                <propertyInstance
+                  Id="513ee7a7-6d1f-44d1-baa5-3ee0fad27e96"
+                  name="IsPartial"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="2bc31ab4-f31d-4093-9606-4ab90b0cd9d6">
+                <propertyInstance
+                  Id="22ab210c-38a6-4d33-91f6-453e561be554"
+                  name="IsStatic"
+                  value="False" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="74afed6a-1966-4957-97d3-5377f8f90c7f">
+                <propertyInstance
+                  Id="f2f9ddf8-e43d-46e6-bd37-7f91d8f8d65e"
+                  name="IsUnsafe"
+                  value="false" />
+              </stereotypeInstanceHasPropertyInstances>
+              <stereotypeInstanceHasPropertyInstances
+                Id="0bc38938-7033-49d6-875f-8d73c0e47090">
+                <propertyInstance
+                  Id="5f158ca9-8414-4d78-a1ea-ac4e112bfd2d"
+                  name="PackageVisibility"
+                  value="internal" />
+              </stereotypeInstanceHasPropertyInstances>
+            </propertyInstances>
+          </stereotypeInstance>
+        </appliedStereotypesInternal>
+      </class>
+    </packageHasNamedElement>
+  </packagedElements>
+</package>
