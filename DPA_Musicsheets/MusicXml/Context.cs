@@ -17,5 +17,6 @@ namespace DPA_Musicsheets.MusicXml
 
         public MusicSheet musicSheet { get; set; }
         public Sequence _sequence { get; set; }
+        public int Divisions { get; set; }
     }
 }

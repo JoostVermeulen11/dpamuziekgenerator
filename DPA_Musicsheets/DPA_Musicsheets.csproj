@@ -193,6 +193,10 @@
     <Compile Include="MusicXml\Context.cs" />
     <Compile Include="MusicXml\MusicXmlReader.cs" />
     <Compile Include="MusicXml\MXLFileReader.cs" />
+    <Compile Include="MusicXml\XmlElementParser\Handlers\AttributeHandlers\ClefHandler.cs" />
+    <Compile Include="MusicXml\XmlElementParser\Handlers\AttributeHandlers\DivisionHandler.cs" />
+    <Compile Include="MusicXml\XmlElementParser\Handlers\AttributeHandlers\IAttributeHandler.cs" />
+    <Compile Include="MusicXml\XmlElementParser\Handlers\AttributeHandlers\TimeSignatureHandler.cs" />
     <Compile Include="MusicXml\XmlElementParser\Handlers\AttributesHandler.cs" />
     <Compile Include="MusicXml\XmlElementParser\ElementHandlerFactory.cs" />
     <Compile Include="MusicXml\XmlElementParser\Handlers\SymbolHandlers\ISymbolHandler.cs" />
@@ -277,6 +281,7 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="DKD.cd" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

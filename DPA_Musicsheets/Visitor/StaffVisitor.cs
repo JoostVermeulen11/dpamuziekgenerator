@@ -57,7 +57,7 @@ namespace DPA_Musicsheets.Visitor
             staff.Add(symbol);
         }
 
-        public void visit(MaatStreep rustnote)
+        public void visit(MaatStreep maatstreep)
         {
             staff.Add(new Barline());
         }
